@@ -1334,7 +1334,7 @@ module decoder(
 				idex_branch = 1'b0;
 				idex_condition = 3'b011;
 				idex_B_sel = 1'b0;
-				idex_ALU_op = 4'b0001;
+				idex_ALU_op = 4'b0111;
 				idex_shamt = 5'b00000;
 				idex_shamt_sel = 1'b0;
 				idex_shift_op = 2'b00;
@@ -1369,7 +1369,7 @@ module decoder(
 				idex_branch = 1'b0;
 				idex_condition = 3'b011;
 				idex_B_sel = 1'b1;
-				idex_ALU_op = 4'b0001;
+				idex_ALU_op = 4'b0111;
 				idex_shamt = 5'b00000;
 				idex_shamt_sel = 1'b0;
 				idex_shift_op = 2'b00;
@@ -1474,7 +1474,7 @@ module decoder(
 				idex_branch = 1'b0;
 				idex_condition = 3'b110;
 				idex_B_sel = 1'b0;
-				idex_ALU_op = 4'b0001;
+				idex_ALU_op = 4'b0111;
 				idex_shamt = 5'b00000;
 				idex_shamt_sel = 1'b0;
 				idex_shift_op = 2'b00;
@@ -1509,7 +1509,7 @@ module decoder(
 				idex_branch = 1'b0;
 				idex_condition = 3'b110;
 				idex_B_sel = 1'b1;
-				idex_ALU_op = 4'b0001;
+				idex_ALU_op = 4'b0111;
 				idex_shamt = 5'b00000;
 				idex_shamt_sel = 1'b0;
 				idex_shift_op = 2'b00;
