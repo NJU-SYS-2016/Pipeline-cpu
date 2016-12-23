@@ -24,26 +24,18 @@ module cpu_top(
     input clk,
     input reset,
     input [7:0] interruptions,
-    //input [31:0] ic_data_out,
-    input [31:0] dc_data_out,
-    input mem_stall,
-    //output [31:0] ic_addr,
-    output dc_read_in,
-    output dc_write_in,
-    output [31:0] dc_addr,
-    output [31:0] data_reg,
-    output [3:0] dc_byte_w_en,
     output time_int_o
 );
     
     wire [31:0] ic_data_out;
-    //wire [31:0] dc_data_out;
-    //wire mem_stall;
+    wire [31:0] dc_data_out;
     wire [31:0] ic_addr;
-    //wire [31:0] dc_addr;
-    //wire [31:0] data_reg;
-    //wire [3:0] dc_byte_w_en;
-    
+    wire [31:0] dc_addr;
+    wire dc_read_in;
+    wire dc_write_in;
+    wire [3:0] dc_byte_w_en;
+    wire [31:0] data_reg;
+    wire mem_stall;
       
     wire stall;
     wire [31:0] pc_in;
@@ -210,6 +202,10 @@ module cpu_top(
     wire [31:0] pc_out;
     wire exmem_jr_out;
     wire [31:0] exmem_alu_res_out;
+    wire [31:0] exmem_excepttype_out;
+    
+    assign ic_addr = pc_out;////**************
+    assign dc_addr = exmem_alu_res_out;
     
     MUX32_5 mux_0(
     .A({ifid_jump_addr,2'b00}),
@@ -225,10 +221,7 @@ module cpu_top(
     .clk(clk),
     .reset(reset),
     .pc_in(pc_in),
-    .pc_out(pc_out));      
-    
-    assign ic_addr = pc_out;////**************
-    assign dc_addr = exmem_alu_res_out;
+    .pc_out(pc_out));
     
     instr_mem I_MEM(
     .clk(clk),
@@ -236,6 +229,28 @@ module cpu_top(
     .pc(ic_addr[31:2]),
     .data_in(0),
     .instr(ic_data_out));
+    
+    cache_manage_unit cache_u(
+    .clk(clk),
+    .rst(reset),
+    .ic_read_in(1'b1),
+    .dc_read_in(dc_read_in),
+    .dc_write_in(dc_write_in),
+    .dc_byte_w_en_in(dc_byte_w_en),
+    .ic_addr(ic_addr),
+    .dc_addr(dc_addr),
+    .data_from_reg(data_reg),
+    .ram_ready(),
+    .block_from_ram(),
+    .mem_stall(mem_stall),
+    .ic_data_out(ic_data_out),
+    .dc_data_out(dc_data_out),
+    .status(),
+    .counter(),
+    .ram_en_out(),
+    .ram_write_out(),
+    .ram_addr_out(),
+    .dc_data_wb());
     
     adder adder_for_pc(
     .cin(0),
@@ -590,7 +605,7 @@ module cpu_top(
     interrupt_except_handle IEH(
     .cp0_status_i(status_o),
     .cp0_cause_i(cause_o),
-    .excepttype_i(exmem_excepttype),
+    .excepttype_i(exmem_excepttype_out),
     .excepttype_o(mem_excepttype));
     
     reg_w_gen reg_w(
@@ -658,7 +673,7 @@ module cpu_top(
     .syscall_out(exmem_syscall_out),
     .exmem_eret(exmem_eret_out),
     .exmem_is_in_delayslot(delayslot),
-    .exmem_excepttype(exmem_excepttype),
+    .exmem_excepttype(exmem_excepttype_out),
     .exmem_jr(exmem_jr_out));
     
     final_target em_tar(
