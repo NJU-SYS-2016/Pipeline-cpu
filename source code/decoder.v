@@ -1843,7 +1843,7 @@ module decoder(
 				idex_movz = 1'b0;
 				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b00;
-				idex_rd_addr_sel = 2'b00;
+				idex_rd_addr_sel = 2'b01;
 				idex_rt_addr_sel = 1'b0;
 				idex_invalid = 1'b0;
 				idex_trap = 1'b0;
@@ -2024,7 +2024,7 @@ module decoder(
 				idex_movz = 1'b0;
 				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b00;
-				idex_rd_addr_sel = 2'b00;
+				idex_rd_addr_sel = 2'b01;
 				idex_rt_addr_sel = 1'b0;
 				idex_invalid = 1'b0;
 				idex_trap = 1'b0;
@@ -2097,7 +2097,7 @@ module decoder(
 				idex_movz = 1'b0;
 				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b00;
-				idex_rd_addr_sel = 2'b00;
+				idex_rd_addr_sel = 2'b01;
 				idex_rt_addr_sel = 1'b0;
 				idex_invalid = 1'b0;
 				idex_trap = 1'b0;
