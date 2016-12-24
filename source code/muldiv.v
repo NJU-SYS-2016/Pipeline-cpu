@@ -43,12 +43,13 @@ module muldiv
 reg [31:0] Hi;
 reg [31:0] Lo;
 
-wire [63:0] mul_res, div_res;
+wire [127:0] mul_res, div_res;
 wire div_valid;
 reg [31:0] temp_out;
 
-reg [31:0] A;
-reg [31:0] B;
+reg [63:0] A,tempA;
+reg [63:0] B,tempB;
+reg data_valid,data_lock;
 
 wire needstall = (Md_op == 4'b0111) || (Md_op == 4'b1000) || (Md_op == 4'b1001) || (Md_op == 4'b0001) || (Md_op == 4'b0010);
 reg stall = 1;
@@ -66,9 +67,9 @@ mult_gen_0 mul0 (
 
 div_gen_0 div0 (
   .aclk(Clk),                                      // input wire aclk
-  .s_axis_divisor_tvalid(1),    // input wire s_axis_divisor_tvalid
+  .s_axis_divisor_tvalid(data_valid),    // input wire s_axis_divisor_tvalid
   .s_axis_divisor_tdata(B),      // input wire [31 : 0] s_axis_divisor_tdata
-  .s_axis_dividend_tvalid(1),  // input wire s_axis_dividend_tvalid
+  .s_axis_dividend_tvalid(data_valid),  // input wire s_axis_dividend_tvalid
   .s_axis_dividend_tdata(A),    // input wire [31 : 0] s_axis_dividend_tdata
   .m_axis_dout_tvalid(div_valid),          // output wire m_axis_dout_tvalid
   .m_axis_dout_tdata(div_res)            // output wire [63 : 0] m_axis_dout_tdata
@@ -77,13 +78,15 @@ div_gen_0 div0 (
 always @ (*) begin
     case (Md_op)
         1 : begin //div
-            A = Rs_in[31] ? ~Rs_in + 32'b1 : Rs_in;
-            B = Rt_in[31] ? ~Rt_in + 32'b1 : Rt_in;
+            tempA = Rs_in[31] ? {32'hffffffff, Rs_in} : {32'h0, Rs_in};
+            tempB = Rt_in[31] ? {32'hffffffff, Rt_in} : {32'h0, Rt_in};
+            A = Rs_in[31] ? ~tempA + 1 : tempA;
+            B = Rt_in[31] ? ~tempB + 1 : tempB;
             Res_out = 0;
         end
         2 : begin //divu
-            A = Rs_in;
-            B = Rt_in;
+            A = {32'h0, Rs_in};
+            B = {32'h0, Rt_in};
             Res_out = 0;
         end
         3 : begin //mfhi
@@ -99,18 +102,18 @@ always @ (*) begin
             Res_out = 0;
         end
         7 : begin //mul
-            A = Rs_in[31] ? ~Rs_in + 32'b1 : Rs_in;
-            B = Rt_in[31] ? ~Rt_in + 32'b1 : Rt_in;
+            A = Rs_in[31] ? {32'hffffffff, Rs_in} : {32'h0, Rs_in};
+            B = Rt_in[31] ? {32'hffffffff, Rt_in} : {32'h0, Rt_in};
             Res_out = temp_out;       
         end
         8 : begin //mult
-            A = Rs_in[31] ? ~Rs_in + 32'b1 : Rs_in;
-            B = Rt_in[31] ? ~Rt_in + 32'b1 : Rt_in;
+            A = Rs_in[31] ? {32'hffffffff, Rs_in} : {32'h0, Rs_in};
+            B = Rt_in[31] ? {32'hffffffff, Rt_in} : {32'h0, Rt_in};
             Res_out = 0;
         end
         9 : begin //multu
-            A = Rs_in;
-            B = Rt_in;
+            A = {32'h0, Rs_in};
+            B = {32'h0, Rt_in};
             Res_out = 0;
         end
         default : begin
@@ -121,18 +124,30 @@ end
 
 always @ (posedge Clk) begin
     if(ready) stall = 0;
+    if(Md_op == 4'b0001 || Md_op == 4'b0010) begin
+        if(!data_lock) begin
+            data_valid = 1'b1;
+            data_lock = 1'b1;
+        end
+        else if(data_valid) data_valid = 1'b0;
+    end
+    else begin
+        data_valid = 1'b0;
+        data_lock = 1'b0;
+    end
     case (Md_op)
         1 : begin //div
             if(div_valid) begin
                 ready <= 1;
-                Hi <= ((Rs_in[31] & ~Rt_in[31])|(~Rs_in[31] & Rt_in[31])) ? ~div_res[31:0] + 1 : div_res[31:0];
-                Lo <= ((Rs_in[31] & ~Rt_in[31])|(~Rs_in[31] & Rt_in[31])) ? ~div_res[63:32] + 1 : div_res[63:32];
+                Hi <= Rs_in[31] ? ~div_res[31:0] + 1 : div_res[31:0];//((Rs_in[31] & ~Rt_in[31])|(~Rs_in[31] & Rt_in[31])) ? ~div_res[31:0] + 1 : div_res[31:0];
+                Lo <= ((Rs_in[31] & ~Rt_in[31])|(~Rs_in[31] & Rt_in[31])) ? ~div_res[95:64] + 1 : div_res[95:64];
             end
         end
         2 : begin //divu
             if(div_valid) begin
                 ready <= 1;
-                {Lo, Hi} <= div_res;
+                Lo <= div_res[95:64];
+                Hi <= div_res[31:0];
             end
         end
         3 : begin //mfhi
@@ -155,15 +170,15 @@ always @ (posedge Clk) begin
         end
         7 : begin //mul
             ready <= 1;
-            {Hi, temp_out} <= ((Rs_in[31] & ~Rt_in[31])|(~Rs_in[31] & Rt_in[31])) ? ~mul_res + 1 : mul_res;
+            {Hi, temp_out} <= mul_res[63:0];
         end
         8 : begin //mult
             ready <= 1;
-            {Hi, Lo} <= ((Rs_in[31] & ~Rt_in[31])|(~Rs_in[31] & Rt_in[31])) ? ~mul_res + 1 : mul_res;
+            {Hi, Lo} <= mul_res[63:0];//((Rs_in[31] & ~Rt_in[31])|(~Rs_in[31] & Rt_in[31])) ? ~mul_res[63:0] + 1 : mul_res[63:0];
         end
         9 : begin //multu
             ready <= 1;
-            {Hi, Lo} <=  mul_res;
+            {Hi, Lo} <=  mul_res[63:0];
         end
         default : begin
             stall <= 1;
