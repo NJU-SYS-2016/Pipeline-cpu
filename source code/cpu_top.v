@@ -24,18 +24,28 @@ module cpu_top(
     input clk,
     input reset,
     input [7:0] interruptions,
+    input [31:0] ic_data_out,
+    input [31:0] dc_data_out,
+    input mem_stall,
+    
+    output [31:0] ic_addr,
+    output [31:0] dc_addr,
+    output dc_read_in,
+    output dc_write_in,
+    output [3:0] dc_byte_w_en,
+    output [31:0] data_reg,
     output time_int_o
 );
     
-    wire [31:0] ic_data_out;
-    wire [31:0] dc_data_out;
-    wire [31:0] ic_addr;
-    wire [31:0] dc_addr;
-    wire dc_read_in;
-    wire dc_write_in;
-    wire [3:0] dc_byte_w_en;
-    wire [31:0] data_reg;
-    wire mem_stall;
+    //wire [31:0] ic_data_out;
+    //wire [31:0] dc_data_out;
+    //wire [31:0] ic_addr;
+    //wire [31:0] dc_addr;
+    //wire dc_read_in;
+    //wire dc_write_in;
+    //wire [3:0] dc_byte_w_en;
+    //wire [31:0] data_reg;
+    //wire mem_stall;
       
     wire stall;
     wire [31:0] pc_in;
@@ -222,35 +232,6 @@ module cpu_top(
     .reset(reset),
     .pc_in(pc_in),
     .pc_out(pc_out));
-    
-    instr_mem I_MEM(
-    .clk(clk),
-    .w_en(0),
-    .pc(ic_addr[31:2]),
-    .data_in(0),
-    .instr(ic_data_out));
-    
-    cache_manage_unit cache_u(
-    .clk(clk),
-    .rst(reset),
-    .ic_read_in(1'b1),
-    .dc_read_in(dc_read_in),
-    .dc_write_in(dc_write_in),
-    .dc_byte_w_en_in(dc_byte_w_en),
-    .ic_addr(ic_addr),
-    .dc_addr(dc_addr),
-    .data_from_reg(data_reg),
-    .ram_ready(),
-    .block_from_ram(),
-    .mem_stall(mem_stall),
-    .ic_data_out(ic_data_out),
-    .dc_data_out(dc_data_out),
-    .status(),
-    .counter(),
-    .ram_en_out(),
-    .ram_write_out(),
-    .ram_addr_out(),
-    .dc_data_wb());
     
     adder adder_for_pc(
     .cin(0),
@@ -721,5 +702,4 @@ module cpu_top(
     .A(memwb_exdata_out),
     .sel(memwb_mem_r_out),
     .out(memwb_data));
-    
 endmodule
