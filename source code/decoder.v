@@ -1628,7 +1628,7 @@ module decoder(
 				idex_exres_sel = 3'b000;
 				idex_movn = 1'b0;
 				idex_movz = 1'b0;
-				idex_rt_data_sel = 1'b0;
+				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b00;
 				idex_rd_addr_sel = 2'b00;
 				idex_rt_addr_sel = 1'b0;
@@ -1662,7 +1662,7 @@ module decoder(
 				idex_exres_sel = 3'b010;
 				idex_movn = 1'b0;
 				idex_movz = 1'b0;
-				idex_rt_data_sel = 1'b0;
+				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b11;
 				idex_rd_addr_sel = 2'b10;
 				idex_rt_addr_sel = 1'b0;
@@ -1698,7 +1698,7 @@ module decoder(
 				idex_exres_sel = 3'b000;
 				idex_movn = 1'b0;
 				idex_movz = 1'b0;
-				idex_rt_data_sel = 1'b0;
+				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b00;
 				idex_rd_addr_sel = 2'b00;
 				idex_rt_addr_sel = 1'b1;
@@ -2165,7 +2165,7 @@ module decoder(
 				idex_exres_sel = 3'b000;
 				idex_movn = 1'b0;
 				idex_movz = 1'b0;
-				idex_rt_data_sel = 1'b0;
+				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b01;
 				idex_rd_addr_sel = 2'b00;
 				idex_rt_addr_sel = 1'b0;
@@ -2199,7 +2199,7 @@ module decoder(
 				idex_exres_sel = 3'b000;
 				idex_movn = 1'b0;
 				idex_movz = 1'b0;
-				idex_rt_data_sel = 1'b0;
+				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b01;
 				idex_rd_addr_sel = 2'b00;
 				idex_rt_addr_sel = 1'b0;
@@ -2233,7 +2233,7 @@ module decoder(
 				idex_exres_sel = 3'b000;
 				idex_movn = 1'b0;
 				idex_movz = 1'b0;
-				idex_rt_data_sel = 1'b0;
+				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b01;
 				idex_rd_addr_sel = 2'b00;
 				idex_rt_addr_sel = 1'b0;
@@ -2267,7 +2267,7 @@ module decoder(
 				idex_exres_sel = 3'b000;
 				idex_movn = 1'b0;
 				idex_movz = 1'b0;
-				idex_rt_data_sel = 1'b0;
+				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b01;
 				idex_rd_addr_sel = 2'b00;
 				idex_rt_addr_sel = 1'b0;
@@ -2301,7 +2301,7 @@ module decoder(
 				idex_exres_sel = 3'b000;
 				idex_movn = 1'b0;
 				idex_movz = 1'b0;
-				idex_rt_data_sel = 1'b0;
+				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b01;
 				idex_rd_addr_sel = 2'b00;
 				idex_rt_addr_sel = 1'b0;
@@ -2335,7 +2335,7 @@ module decoder(
 				idex_exres_sel = 3'b000;
 				idex_movn = 1'b0;
 				idex_movz = 1'b0;
-				idex_rt_data_sel = 1'b0;
+				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b01;
 				idex_rd_addr_sel = 2'b00;
 				idex_rt_addr_sel = 1'b0;
@@ -2369,7 +2369,7 @@ module decoder(
 				idex_exres_sel = 3'b000;
 				idex_movn = 1'b0;
 				idex_movz = 1'b0;
-				idex_rt_data_sel = 1'b0;
+				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b01;
 				idex_rd_addr_sel = 2'b00;
 				idex_rt_addr_sel = 1'b0;
@@ -2403,7 +2403,7 @@ module decoder(
 				idex_exres_sel = 3'b000;
 				idex_movn = 1'b0;
 				idex_movz = 1'b0;
-				idex_rt_data_sel = 1'b0;
+				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b01;
 				idex_rd_addr_sel = 2'b00;
 				idex_rt_addr_sel = 1'b0;
@@ -2437,7 +2437,7 @@ module decoder(
 				idex_exres_sel = 3'b000;
 				idex_movn = 1'b0;
 				idex_movz = 1'b0;
-				idex_rt_data_sel = 1'b0;
+				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b01;
 				idex_rd_addr_sel = 2'b00;
 				idex_rt_addr_sel = 1'b0;
@@ -2471,7 +2471,7 @@ module decoder(
 				idex_exres_sel = 3'b000;
 				idex_movn = 1'b0;
 				idex_movz = 1'b0;
-				idex_rt_data_sel = 1'b0;
+				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b01;
 				idex_rd_addr_sel = 2'b00;
 				idex_rt_addr_sel = 1'b0;
@@ -2505,7 +2505,7 @@ module decoder(
 				idex_exres_sel = 3'b000;
 				idex_movn = 1'b0;
 				idex_movz = 1'b0;
-				idex_rt_data_sel = 1'b0;
+				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b01;
 				idex_rd_addr_sel = 2'b00;
 				idex_rt_addr_sel = 1'b0;
@@ -2539,7 +2539,7 @@ module decoder(
 				idex_exres_sel = 3'b000;
 				idex_movn = 1'b0;
 				idex_movz = 1'b0;
-				idex_rt_data_sel = 1'b0;
+				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b01;
 				idex_rd_addr_sel = 2'b00;
 				idex_rt_addr_sel = 1'b0;
@@ -2646,7 +2646,7 @@ module decoder(
 				idex_exres_sel = 3'b000;
 				idex_movn = 1'b0;
 				idex_movz = 1'b0;
-				idex_rt_data_sel = 1'b0;
+				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b00;
 				idex_rd_addr_sel = 2'b00;
 				idex_rt_addr_sel = 1'b0;
@@ -2682,7 +2682,7 @@ module decoder(
 				idex_exres_sel = 3'b000;
 				idex_movn = 1'b0;
 				idex_movz = 1'b0;
-				idex_rt_data_sel = 1'b0;
+				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b00;
 				idex_rd_addr_sel = 2'b00;
 				idex_rt_addr_sel = 1'b0;
@@ -2750,7 +2750,7 @@ module decoder(
 				idex_exres_sel = 3'b000;
 				idex_movn = 1'b0;
 				idex_movz = 1'b0;
-				idex_rt_data_sel = 1'b0;
+				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b00;
 				idex_rd_addr_sel = 2'b00;
 				idex_rt_addr_sel = 1'b0;
