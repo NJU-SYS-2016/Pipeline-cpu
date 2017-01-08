@@ -75,11 +75,11 @@ module control_unit(
 					32'h9:/*syscall*/cu_vector = `except_new_pc;
 					32'ha:/*ri无效指令*/begin
 						cu_vector 		= `except_new_pc;
-						cu_pc_stall		=		1'b0;
-						cu_ifid_stall	=		1'b0;
-						cu_idex_stall	=		1'b0;
-						cu_exmem_stall	=		1'b0;
-						cu_memwb_stall	=		1'b0;
+						cu_pc_stall		=		1'b1;
+						cu_ifid_stall	=		1'b1;
+						cu_idex_stall	=		1'b1;
+						cu_exmem_stall	=		1'b1;
+						cu_memwb_stall	=		1'b1;
 					end
 					32'hb:/*ov溢出异常*/cu_vector = `except_new_pc;
 					32'hc:/*tr自陷异常*/cu_vector = `except_new_pc;
