@@ -39,6 +39,7 @@ module cp0(
 		cp0_mem[2] 	=	32'h1000ff01;
 		cp0_mem[3] 	=	32'h0;
 		cp0_mem[4]	=	32'h0;
+		time_int_o  =   1'b0;
 	end
     always@(*) begin
         status_o = cp0_mem[2];
@@ -54,21 +55,21 @@ module cp0(
 			cp0_mem[4]		<=	32'h0;
 		end
 		else begin
-			//count寄存�?
+			//count寄存�?
 			if(cp0_mem[0] == 32'hffffffff) begin
 				cp0_mem[0] <= 32'h0;
 			end
 			else begin
 				cp0_mem[0] <= cp0_mem[0] + 32'b1;
 			end
-			//compare寄存�?
+			//compare寄存�?
 			if(cp0_mem[1] != 0 && cp0_mem[1] == cp0_mem[0]) begin
 				time_int_o <= 1'b1;
 			end
-
+         
 			//mfc0 & mtc0
 			if(w_en_i == 1'b1) begin
-				case(r_addr_i)
+				case(w_addr_i)
 					32'h9: cp0_mem[0] 	<= data_i;
 					32'hb: begin cp0_mem[1] <= data_i; time_int_o <= 1'b0; end
 					32'hc: cp0_mem[2] 	<= data_i;

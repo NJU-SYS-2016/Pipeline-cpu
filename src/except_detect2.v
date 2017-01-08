@@ -1,13 +1,13 @@
 /*
-alu_lf ½Óalu²¿¼þµÄlf
-alu_of ½Óalu²¿¼þµÄof
-alu_zf ½Óalu²¿¼þµÄzf
-trap ½ÓidexÁ÷Ë®¶Î¼Ä´æÆ÷Êä³öidex_trap
-overflow_detect ½ÓidexÁ÷Ë®¶Î¼Ä´æÆ÷Êä³öidex_overflow_detect
-excepttype_in ½ÓidexÁ÷Ë®¶Î¼Ä´æÆ÷Êä³öidex_excepttype
-condition ½ÓidexÁ÷Ë®¶Î¼Ä´æÆ÷Êä³öidex_condition
+alu_lf ï¿½ï¿½aluï¿½ï¿½ï¿½ï¿½ï¿½ï¿½lf
+alu_of ï¿½ï¿½aluï¿½ï¿½ï¿½ï¿½ï¿½ï¿½of
+alu_zf ï¿½ï¿½aluï¿½ï¿½ï¿½ï¿½ï¿½ï¿½zf
+trap ï¿½ï¿½idexï¿½ï¿½Ë®ï¿½Î¼Ä´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½idex_trap
+overflow_detect ï¿½ï¿½idexï¿½ï¿½Ë®ï¿½Î¼Ä´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½idex_overflow_detect
+excepttype_in ï¿½ï¿½idexï¿½ï¿½Ë®ï¿½Î¼Ä´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½idex_excepttype
+condition ï¿½ï¿½idexï¿½ï¿½Ë®ï¿½Î¼Ä´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½idex_condition
 
-excepttype_out ½ÓexmemÁ÷Ë®¶Î¼Ä´æÆ÷ÊäÈëexcepttype_in
+excepttype_out ï¿½ï¿½exmemï¿½ï¿½Ë®ï¿½Î¼Ä´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½excepttype_in
  */
 
 
@@ -35,6 +35,7 @@ module except_detect2(
 		output reg[31:0]	excepttype_out
 	);
 	always@(*) begin
+	   excepttype_out = excepttype_in;
 		if(overflow_detect == 1'b1 && alu_of == 1'b1) begin
 			excepttype_out = excepttype_in | 32'h00000400;
 		end

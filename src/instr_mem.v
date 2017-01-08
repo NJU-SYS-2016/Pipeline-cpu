@@ -33,7 +33,7 @@ module instr_mem
 (* ram_style="distributed" *)
 reg [RAM_WIDTH-1:0] regs [(2**RAM_ADDR_BITS)-1:0];
 initial begin
-    $readmemh("D:\\ram.txt",regs);
+    $readmemh("/home/tyh/Documents/ram.txt",regs);
 end
 
 always @(negedge clk)

@@ -1,8 +1,8 @@
 /*
- syscall_i ½ÓÒëÂëÆ÷Êä³ö£ºidex_syscall
- eret ½ÓÒëÂëÆ÷Êä³ö£ºidex_eret
- invalid_inst_i ½ÓÒëÂëÆ÷Êä³ö£ºinvalid_inst
- excepttype_o ½ÓidexÁ÷Ë®¶Î¼Ä´æÆ÷£ºidex_excepttype_in
+ syscall_i ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½idex_syscall
+ eret ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½idex_eret
+ invalid_inst_i ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½invalid_inst
+ excepttype_o ï¿½ï¿½idexï¿½ï¿½Ë®ï¿½Î¼Ä´ï¿½ï¿½ï¿½ï¿½ï¿½idex_excepttype_in
  */
 
 module except_detect1(
@@ -12,6 +12,7 @@ module except_detect1(
 		output reg[31:0]	excepttype_o
 	);
 	always@(*) begin
+	   excepttype_o = 32'h00000000;
 		if(syscall_i == 1'b1) begin
 			excepttype_o = excepttype_o | 32'h00000100;
 		end

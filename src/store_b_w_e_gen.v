@@ -13,6 +13,7 @@ module store_b_w_e_gen (
 					1 : b_w_en = 4'b0100;
 					0 : b_w_en = 4'b1000;
 					default : b_w_en = 4'b1111;
+					
 				endcase
 			end
 			1 : begin //sh

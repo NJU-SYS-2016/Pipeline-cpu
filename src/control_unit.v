@@ -1,10 +1,10 @@
-`define		pc_j_jal			0  //不需要，放在 pc_control_hazard与branch做相同处�?
+`define		pc_j_jal			0  //不需要，放在 pc_control_hazard与branch做相同处�?
 //`define		pc_jr				1  
 `define		pc_except			1
 `define 	pc_eret				2
 `define		pc_control_hazard 	3
 `define		pc_append_4			4
-`define 	except_new_pc		32'h10
+`define 	except_new_pc		32'h80000000
 
 module control_unit(
 	input			reset,
@@ -17,6 +17,8 @@ module control_unit(
 	input[4:0]		ifid_rs_addr,
 	input[4:0]		ifid_real_rt_addr,
 	input[4:0]		idex_real_rd_addr,
+
+    input[31:0]     pc,
 
 	output			reg cu_pc_stall,
 	output 		    reg cu_ifid_stall,
@@ -60,6 +62,7 @@ module control_unit(
 				cu_idex_flush		=		1'b1;
 				cu_exmem_flush		=		1'b1;
 				cu_pc_src			=		`pc_except;
+
 				case(mem_excepttype)
 					32'h1:/*interrupt0*/cu_vector = `except_new_pc;
 					32'h2:/*interrupt1*/cu_vector = `except_new_pc;
@@ -70,7 +73,14 @@ module control_unit(
 					32'h7:/*interrupt6*/cu_vector = `except_new_pc;
 					32'h8:/*interrupt7*/cu_vector = `except_new_pc;
 					32'h9:/*syscall*/cu_vector = `except_new_pc;
-					32'ha:/*ri无效指令*/cu_vector = `except_new_pc;
+					32'ha:/*ri无效指令*/begin
+						cu_vector 		= `except_new_pc;
+						cu_pc_stall		=		1'b0;
+						cu_ifid_stall	=		1'b0;
+						cu_idex_stall	=		1'b0;
+						cu_exmem_stall	=		1'b0;
+						cu_memwb_stall	=		1'b0;
+					end
 					32'hb:/*ov溢出异常*/cu_vector = `except_new_pc;
 					32'hc:/*tr自陷异常*/cu_vector = `except_new_pc;
 					32'hd:/*eret*/begin
@@ -79,7 +89,7 @@ module control_unit(
 				endcase
 			end
 			else begin
-				//分支处理，控制异�?
+				//分支处理，控制异�?
 				if(mem_branch_state == 1'b1) begin
 					cu_pc_src 		= 	`pc_control_hazard;
 					cu_ifid_flush 	=	1'b1;
