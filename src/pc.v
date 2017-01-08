@@ -27,12 +27,12 @@ module pc(
 );
 
 initial begin
-    pc_out <= 32'b0; //loader地址
+    pc_out <= 32'hf0000000; //loader地址
 end
 
 always @(negedge clk) begin
     if (reset) begin
-    	pc_out <= 32'b0; //loader地址
+    	pc_out <= 32'hf0000000; //loader地址
     end
     else if (!stall) begin
     	pc_out <= pc_in;

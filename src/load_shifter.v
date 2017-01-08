@@ -14,7 +14,7 @@ reg [4:0] shamt;
 			    case (addr)
 			        0 : data_to_reg = { { 24 {mem_data[31]} } , mem_data[31:24] }; 
 			        1 : data_to_reg = { { 24 {mem_data[23]} } , mem_data[23:16] };
-			        2 : data_to_reg = { { 24 {mem_data[15]} } , mem_data[15:0] };
+			        2 : data_to_reg = { { 24 {mem_data[15]} } , mem_data[15:8] };
 			        3 : data_to_reg = { { 24 {mem_data[7]} } , mem_data[7:0] };
 				endcase
 			end
@@ -22,7 +22,7 @@ reg [4:0] shamt;
 			    case (addr)
                     0 : data_to_reg = { 24 'b0 , mem_data[31:24] }; 
                     1 : data_to_reg = { 24 'b0 , mem_data[23:16] };
-                    2 : data_to_reg = { 24 'b0 , mem_data[15:0] };
+                    2 : data_to_reg = { 24 'b0 , mem_data[15:8] };
                     3 : data_to_reg = { 24 'b0 , mem_data[7:0] };
             endcase
 			end
