@@ -941,6 +941,85 @@ module decoder(
 				idex_md_op = 4'b0000;
 				idex_nop = 1'b0;
 
+				
+				
+				
+		// SEB
+		end else if((ifid_instr[31 : 26] == 6'b011111) &&
+			(ifid_instr[25:21] == 5'b00000) &&
+			(ifid_instr[10 : 6] == 5'b10000) &&
+			(ifid_instr[5 : 0] == 6'b100000)) begin
+				idex_cp0_src_addr = 5'b00000;
+				idex_jump = 1'b0;
+				idex_mem_w_en = 1'b0;
+				idex_mem_r_en = 1'b0;
+				idex_reg_w_en = 1'b1;
+				idex_branch = 1'b0;
+				idex_condition = 3'b000;
+				idex_B_sel = 1'b0;
+				idex_ALU_op = 4'b1010;
+				idex_shamt = 5'b00000;
+				idex_shamt_sel = 1'b0;
+				idex_shift_op = 2'b00;
+				idex_load_sel = 3'b000;
+				idex_store_sel = 3'b000;
+				idex_of_w_disen = 1'b0;
+				idex_cp0_dest_addr = 5'b00000;
+				idex_cp0_w_en = 1'b0;
+				idex_syscall = 1'b0;
+				idex_eret = 1'b0;
+				idex_jr = 1'b0;
+				idex_exres_sel = 3'b000;
+				idex_movn = 1'b0;
+				idex_movz = 1'b0;
+				idex_rt_data_sel = 1'b1;
+				idex_imm_ext = 2'b00;
+				idex_rd_addr_sel = 2'b01;
+				idex_rt_addr_sel = 1'b0;
+				idex_invalid = 1'b0;
+				idex_trap = 1'b0;
+				idex_md_op = 4'b0000;
+				idex_nop = 1'b0;		
+				
+		// SEH
+		end else if((ifid_instr[31 : 26] == 6'b011111) &&
+			(ifid_instr[25:21] == 5'b00000) &&
+			(ifid_instr[10 : 6] == 5'b11000) &&
+			(ifid_instr[5 : 0] == 6'b100000)) begin
+				idex_cp0_src_addr = 5'b00000;
+				idex_jump = 1'b0;
+				idex_mem_w_en = 1'b0;
+				idex_mem_r_en = 1'b0;
+				idex_reg_w_en = 1'b1;
+				idex_branch = 1'b0;
+				idex_condition = 3'b000;
+				idex_B_sel = 1'b0;
+				idex_ALU_op = 4'b1011;
+				idex_shamt = 5'b00000;
+				idex_shamt_sel = 1'b0;
+				idex_shift_op = 2'b00;
+				idex_load_sel = 3'b000;
+				idex_store_sel = 3'b000;
+				idex_of_w_disen = 1'b0;
+				idex_cp0_dest_addr = 5'b00000;
+				idex_cp0_w_en = 1'b0;
+				idex_syscall = 1'b0;
+				idex_eret = 1'b0;
+				idex_jr = 1'b0;
+				idex_exres_sel = 3'b000;
+				idex_movn = 1'b0;
+				idex_movz = 1'b0;
+				idex_rt_data_sel = 1'b1;
+				idex_imm_ext = 2'b00;
+				idex_rd_addr_sel = 2'b01;
+				idex_rt_addr_sel = 1'b0;
+				idex_invalid = 1'b0;
+				idex_trap = 1'b0;
+				idex_md_op = 4'b0000;
+				idex_nop = 1'b0;		
+				
+				
+				
 		// BEQ
 		end else if(ifid_instr[31 : 26] == 6'b000100) begin
 				idex_cp0_src_addr = 5'b00000;

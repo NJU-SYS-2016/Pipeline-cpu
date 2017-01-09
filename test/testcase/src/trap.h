@@ -6,7 +6,7 @@
 
 #define HIT_GOOD_TRAP\
 	do{\
-		asm volatile("add $31, $0, 0x87655678\n\t"\
+		asm volatile("add $31, $0, 0x56788765\n\t"\
 				"suc:\n\t"\
 				"j suc\n\t"\
 				"nop\n\t");\
@@ -26,7 +26,7 @@ void nemu_assert(int cond)
 {
 	do{
 		if( !cond )
-			asm volatile("add $31, $0, 0x43211234\n\t"\
+			asm volatile("add $31, $0, 0x12344321\n\t"\
 				"fail:\n\t"\
 				"j fail\n\t"\
 				"nop\n\t");
