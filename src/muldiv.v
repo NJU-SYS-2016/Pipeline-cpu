@@ -123,7 +123,6 @@ always @ (*) begin
 end
 
 always @ (posedge Clk) begin
-    if(ready) stall = 0;
     if(Md_op == 4'b0001 || Md_op == 4'b0010) begin
         if(!data_lock) begin
             data_valid = 1'b1;
@@ -137,18 +136,32 @@ always @ (posedge Clk) begin
     end
     case (Md_op)
         1 : begin //div
-            if(div_valid) begin
-                ready <= 1;
-                Hi <= Rs_in[31] ? ~div_res[31:0] + 1 : div_res[31:0];//((Rs_in[31] & ~Rt_in[31])|(~Rs_in[31] & Rt_in[31])) ? ~div_res[31:0] + 1 : div_res[31:0];
-                Lo <= ((Rs_in[31] & ~Rt_in[31])|(~Rs_in[31] & Rt_in[31])) ? ~div_res[95:64] + 1 : div_res[95:64];
-            end
+		    if(ready) begin
+				ready <= 0;
+				stall <= 0;
+			end
+			else begin
+				if(div_valid) begin
+					ready <= 1;
+					stall <= 1;
+					Hi <= Rs_in[31] ? ~div_res[31:0] + 1 : div_res[31:0];//((Rs_in[31] & ~Rt_in[31])|(~Rs_in[31] & Rt_in[31])) ? ~div_res[31:0] + 1 : div_res[31:0];
+					Lo <= ((Rs_in[31] & ~Rt_in[31])|(~Rs_in[31] & Rt_in[31])) ? ~div_res[95:64] + 1 : div_res[95:64];
+				end
+			end
         end
         2 : begin //divu
-            if(div_valid) begin
-                ready <= 1;
-                Lo <= div_res[95:64];
-                Hi <= div_res[31:0];
-            end
+		    if(ready) begin
+				ready <= 0;
+				stall <= 0;
+			end
+			else begin
+				if(div_valid) begin
+					ready <= 1;
+					stall <= 1;
+					Lo <= div_res[95:64];
+					Hi <= div_res[31:0];
+				end
+			end
         end
         3 : begin //mfhi
             stall <= 1;
@@ -169,15 +182,36 @@ always @ (posedge Clk) begin
             Lo <= Rs_in;
         end
         7 : begin //mul
-            ready <= 1;
+			if(ready) begin
+				ready <= 0;
+				stall <= 0;
+			end
+            else begin
+				ready <= 1;
+				stall <= 1;
+			end
             {Hi, temp_out} <= mul_res[63:0];
         end
         8 : begin //mult
-            ready <= 1;
+			if(ready) begin
+				ready <= 0;
+				stall <= 0;
+			end
+            else begin
+				ready <= 1;
+				stall <= 1;
+			end
             {Hi, Lo} <= mul_res[63:0];//((Rs_in[31] & ~Rt_in[31])|(~Rs_in[31] & Rt_in[31])) ? ~mul_res[63:0] + 1 : mul_res[63:0];
         end
         9 : begin //multu
-            ready <= 1;
+			if(ready) begin
+				ready <= 0;
+				stall <= 0;
+			end
+            else begin
+				ready <= 1;
+				stall <= 1;
+			end
             {Hi, Lo} <=  mul_res[63:0];
         end
         default : begin
