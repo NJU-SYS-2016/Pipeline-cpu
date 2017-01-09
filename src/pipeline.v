@@ -72,6 +72,10 @@ wire dc_write_in;
 wire [DATA_WIDTH - 1 : 0] data_reg;
 wire [3:0] dc_byte_w_en;
 
+wire [31 : 0] ic_data_out;
+wire [31 : 0] mem_data;
+wire mem_stall;
+
 reg reset_init;
 reg [6:0] init_counter;
 reg reset_done;
@@ -192,7 +196,7 @@ cpu_interface inst_ci  (
     .instr_addr        ( ic_addr[31:2]        ),
     .dmem_read_in      ( dc_read_in           ),
     .dmem_write_in     ( dc_write_in           ),
-    .dmem_addr         ( dc_addr   ),
+    .dmem_addr         ( dc_addr[31:2]   ),
     .data_from_reg     ( data_reg ),
     .dmem_byte_w_en    ( dc_byte_w_en   ),
     .clk_to_ddr_pass   ( clk_to_ddr_pass     ), // 100 MHz

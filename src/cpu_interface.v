@@ -375,6 +375,8 @@ always @ (*) begin
         loader_en = 1;
         if (dmem_write_in) begin
             // TODO add short byte enable
+            loader_wen = dmem_byte_w_en;
+            /*
             case (dmem_byte_w_en)
                 4'b0001: loader_wen = 4'b1000;
                 4'b0010: loader_wen = 4'b0100;
@@ -384,6 +386,7 @@ always @ (*) begin
                 4'b1100: loader_wen = 4'b0011;
                 default: loader_wen = 4'b1111;
             endcase
+            */
         end
         else loader_wen = 4'b0000;
         dmem_data_out = loader_data;
@@ -392,6 +395,8 @@ always @ (*) begin
         dc_read_in    = dmem_read_in;
         dc_write_in   = dmem_write_in;
         dmem_data_out = dc_data_out;
+        dc_wen = dmem_byte_w_en;
+        /*
         case (dmem_byte_w_en)
             4'b0001: dc_wen = 4'b1000;
             4'b0010: dc_wen = 4'b0100;
@@ -401,6 +406,7 @@ always @ (*) begin
             4'b1100: dc_wen = 4'b0011;
             default: dc_wen = 4'b1111;
         endcase
+        */
     end
 
     // instruction fetch redirect
