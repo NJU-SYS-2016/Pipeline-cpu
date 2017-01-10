@@ -214,6 +214,8 @@ module cpu_top(
     wire [31:0] exmem_alu_res_out;
     wire [31:0] exmem_excepttype_out;
     
+    wire store_enable;
+    wire load_enable;
     assign ic_addr = pc_out;////**************
     assign dc_addr = exmem_alu_res_out;
     
@@ -587,7 +589,10 @@ module cpu_top(
     .cp0_status_i(status_o),
     .cp0_cause_i(cause_o),
     .excepttype_i(exmem_excepttype_out),
-    .excepttype_o(mem_excepttype));
+    .excepttype_o(mem_excepttype),
+    .store_enable(store_enable),
+    .load_enable(load_enable)
+    );
     
     reg_w_gen reg_w(
     .of(of_out),
@@ -634,8 +639,8 @@ module cpu_top(
     .mem_nop(),     //***********
     .mem_jmp(),     //*****************
     .exmem_pc(exmem_pc_out),
-    .exmem_mem_w(dc_write_in),
-    .exmem_mem_r(dc_read_in),
+    .exmem_mem_w(dc_write_in & store_enable),
+    .exmem_mem_r(dc_read_in & load_enable),
     .exmem_reg_w(exmem_reg_w_out),
     .reg_byte_w_en_out(reg_byte_w_en_out),
     .exmem_rd_addr(exmem_rd_addr_out),

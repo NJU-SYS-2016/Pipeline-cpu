@@ -3,7 +3,11 @@ module interrupt_except_handle(
 		input[31:0] 		cp0_cause_i,
 		input[31:0]			excepttype_i,
 		//编码转换
-		output reg [31:0]			excepttype_o
+		output reg [31:0]			excepttype_o,
+
+		//访存限制
+		output reg 			store_enable,
+		output reg 			load_enable
 	);
 	//中断处理
 	wire[31:0] 	excepttype;
@@ -19,6 +23,8 @@ module interrupt_except_handle(
 	assign excepttype[0] = cp0_cause_i[8] & cp0_status_i[8] & !cp0_status_i[1] & cp0_status_i[0];
 
 	always@(*) begin
+		store_enable <= 1'b0;
+		load_enable <= 1'b0;
 		if(excepttype[0] == 1'b1) begin
 			excepttype_o <= 32'h1;
 		end
@@ -60,6 +66,8 @@ module interrupt_except_handle(
 		end
 		else begin
 			excepttype_o <= 32'h0;
+			store_enable <= 1'b1;
+			load_enable <= 1'b1;
 		end
 	end
 

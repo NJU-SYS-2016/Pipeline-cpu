@@ -18,8 +18,6 @@ module control_unit(
 	input[4:0]		ifid_real_rt_addr,
 	input[4:0]		idex_real_rd_addr,
 
-    input[31:0]     pc,
-
 	output			reg cu_pc_stall,
 	output 		    reg cu_ifid_stall,
 	output			reg cu_idex_stall,
