@@ -36,7 +36,12 @@ module cpu_top(
     output [31:0] data_reg,
     output time_int_o
 );
-    
+
+	assign dc_read_in = dc_read_in_temp & load_enable;
+	assign dc_write_in = dc_write_in_temp & store_enable;
+    wire dc_write_in_temp;
+    wire dc_read_in_temp;
+
     //wire [31:0] ic_data_out;
     //wire [31:0] dc_data_out;
     //wire [31:0] ic_addr;
@@ -639,8 +644,8 @@ module cpu_top(
     .mem_nop(),     //***********
     .mem_jmp(),     //*****************
     .exmem_pc(exmem_pc_out),
-    .exmem_mem_w(dc_write_in & store_enable),
-    .exmem_mem_r(dc_read_in & load_enable),
+    .exmem_mem_w(dc_write_in_temp),
+    .exmem_mem_r(dc_read_in_temp),
     .exmem_reg_w(exmem_reg_w_out),
     .reg_byte_w_en_out(reg_byte_w_en_out),
     .exmem_rd_addr(exmem_rd_addr_out),
