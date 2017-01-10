@@ -2688,7 +2688,7 @@ module decoder(
 				idex_eret = 1'b0;
 				idex_jr = 1'b0;
 				idex_exres_sel = 3'b000;
-				idex_movn = 1'b0;
+				idex_movn = 1'b1;
 				idex_movz = 1'b0;
 				idex_rt_data_sel = 1'b1;
 				idex_imm_ext = 2'b00;
