@@ -23,51 +23,51 @@ module interrupt_except_handle(
 	assign excepttype[0] = cp0_cause_i[8] & cp0_status_i[8] & !cp0_status_i[1] & cp0_status_i[0];
 
 	always@(*) begin
-		store_enable <= 1'b0;
-		load_enable <= 1'b0;
+		store_enable = 1'b0;
+		load_enable = 1'b0;
 		if(excepttype[0] == 1'b1) begin
-			excepttype_o <= 32'h1;
+			excepttype_o = 32'h1;
 		end
 		else if (excepttype[1] == 1'b1) begin
-			excepttype_o <= 32'h2;
+			excepttype_o = 32'h2;
 		end
 		else if (excepttype[2] == 1'b1) begin
-			excepttype_o <= 32'h3;
+			excepttype_o = 32'h3;
 		end
 		else if (excepttype[3] == 1'b1) begin
-			excepttype_o <= 32'h4;
+			excepttype_o = 32'h4;
 		end
 		else if (excepttype[4] == 1'b1) begin
-			excepttype_o <= 32'h5;
+			excepttype_o = 32'h5;
 		end
 		else if (excepttype[5] == 1'b1) begin
-			excepttype_o <= 32'h6;
+			excepttype_o = 32'h6;
 		end
 		else if (excepttype[6] == 1'b1) begin
-			excepttype_o <= 32'h7;
+			excepttype_o = 32'h7;
 		end
 		else if (excepttype[7] == 1'b1) begin
-			excepttype_o <= 32'h8;
+			excepttype_o = 32'h8;
 		end
 		else if (excepttype[8] == 1'b1) begin
-			excepttype_o <= 32'h9;
+			excepttype_o = 32'h9;
 		end
 		else if (excepttype[9] == 1'b1) begin
-			excepttype_o <= 32'ha;
+			excepttype_o = 32'ha;
 		end
 		else if (excepttype[10] == 1'b1) begin
-			excepttype_o <= 32'hb;
+			excepttype_o = 32'hb;
 		end
 		else if (excepttype[11] == 1'b1) begin
-			excepttype_o <= 32'hc;
+			excepttype_o = 32'hc;
 		end
 		else if (excepttype[12] == 1'b1) begin
-			excepttype_o <= 32'hd;
+			excepttype_o = 32'hd;
 		end
 		else begin
-			excepttype_o <= 32'h0;
-			store_enable <= 1'b1;
-			load_enable <= 1'b1;
+			excepttype_o = 32'h0;
+			store_enable = 1'b1;
+			load_enable = 1'b1;
 		end
 	end
 
