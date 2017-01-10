@@ -1,323 +1,222 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2015/12/07 19:47:56
-// Design Name: 
-// Module Name: cache_control
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-//   负责生成 cache 的控制信号的组合逻辑，以�? cache 状�?�转移的次�?��?�辑（组合�?�辑�?
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
 `include "status.vh"
 
-module cache_control(/* autoarg */
-    //Inputs
-    ic_read_in,
-    dc_read_in, dc_write_in, 
-    ic_hit_in, ic_valid_in, 
-    dc_hit_in, dc_dirty_in, dc_valid_in, 
-    status_in, counter_in, ic_word_sel_in, 
-    dc_word_sel_in, dc_byte_w_en_in, 
+module cache_control (
+//	input write_back_response,
+//	input load_data_response,
+//	input ddr_response,
 
-    //Outputs
-    ic_enable_reg, ic_cmp_reg, ic_write_reg, 
-    ic_valid_reg, dc_enable_reg, dc_cmp_reg, 
-    dc_write_reg, dc_valid_reg, ram_en_out, 
-    ram_write_out, ram_addr_sel_reg, status_next_reg, 
-    counter_next_reg, ic_word_sel_reg, dc_word_sel_reg, 
-    ic_byte_w_en_reg, dc_byte_w_en_reg
-);
-input ic_read_in;
-input dc_read_in;
-input dc_write_in;
-input ic_hit_in;
-input ic_valid_in;
-input dc_hit_in;
-input dc_dirty_in;
-input dc_valid_in;
-input [2:0] status_in;
-input [2:0] counter_in;
-input [2:0] ic_word_sel_in;
-input [2:0] dc_word_sel_in;
-input [3:0] dc_byte_w_en_in;
+	input instr_req,
+	input data_r_req,
+	input data_w_req,
+	input [1:0] hit,
+	input [1:0] dirty,
+	input [1:0] valid,
+	input [3:0] byte_w_en_in,
 
-output reg ic_enable_reg;
-output reg ic_cmp_reg;
-output reg ic_write_reg;
-output reg ic_valid_reg;
+	input [2:0] status,
 
-output reg dc_enable_reg;
-output reg dc_cmp_reg;
-output reg dc_write_reg;
-output reg dc_valid_reg;
+	output reg [1:0] enable,
+	output reg [1:0] write,
+	output reg [1:0] compare,
+	output reg [3:0] i_byte_w_en_out ,
+	output reg [3:0] d_byte_w_en_out ,
 
-output reg ram_en_out;
-output reg ram_write_out;
-output reg [1:0] ram_addr_sel_reg;
-output reg [2:0] status_next_reg;
-output reg [2:0] counter_next_reg;
-output reg [2:0] ic_word_sel_reg;
-output reg [2:0] dc_word_sel_reg;
-output reg [3:0] ic_byte_w_en_reg;
-output reg [3:0] dc_byte_w_en_reg;
+	output reg [1:0] load,
+	output reg ram_en_out,
+	output reg ram_write_out,      //cache write back or load request
+	output reg d_cache_r_sel,
+	//output reg [1:0] ram_addr_sel,
 
-// 下面�? always 块是�?个根据当前周�? cache 状�?�的 switch-case 语句
-// 每个 case 下的行为模式基本相似，即�?
-//   (1). 生成本周期的控制信号
-//   (2). 决定下一周期状�??
-// �?要注意的是，�? NORMAL 状�?�下，在 (1) �? (2) 之间，隐含着 cache_2way 的�?�辑�?
-// 也就是说，在 (1) 控制信号生成后，�?要等�? cache_2way 的延迟，(2) �?依赖的信号才有效�?
-// 此外，最终的状�?�转移时序电路，是在外部�? cache_manage_unit 完成的�??
+	//output reg instr_response, //instruction response to core
+	//output reg data_response   //data response to core
+	output reg [2:0] next_status
+	
+	);
+	/*TODO: control logic module*/
+	//reg [1:0] d_cache_status;	//D cache status(00:free 01:I cache read D cache 10:CPU read or write D cache)
+	//reg ram_cache_line_status;  //somebody use the load line between ram and cache
 
-always @(*) begin
-    case(status_in)
-        `STAT_IC_MISS:
-        begin
-            // I-cache 写入控制设定
-            ic_enable_reg = 1;
-            ic_cmp_reg = 0;
-            ic_write_reg = 1;
-            ic_byte_w_en_reg = 4'b1111;
+	initial begin
+		enable = 2'b00;
+		write = 2'b00;
+		compare = 2'b00;
+		i_byte_w_en_out = 4'b0000;
+		d_byte_w_en_out = 4'b0000;
 
-            // I-cache 写入内容设定
-            ic_valid_reg = 1;
-            ic_word_sel_reg = counter_in;
+		load = 2'b00;
+		ram_en_out = 1'b0;
+		ram_write_out = 1'b0;
+		d_cache_r_sel = 1'b1;
+		// instr_response = 1'b0;
+		// data_response = 1'b0;
+	//	ram_addr_sel = 2'b00;
+		next_status = 0;
+		//d_cache_status = 2'b00
+		//ram_cache_line_status = 1'b0;
+	end
 
-            //for data coherrence
-            dc_enable_reg = 1;
-            dc_cmp_reg = 1;
-            dc_write_reg = 0;
-            dc_valid_reg = 1;
+	always @(*) begin
+		case(status)
+		 `IC_MISS:
+		begin
+			// I cache write enable
+			enable[0] = 1'b1;
+			compare[0] = 1'b0;
+			write[0] = 1'b1;
+			i_byte_w_en_out = 4'b1111;
 
-            dc_word_sel_reg = counter_in;//it is meaningful while loading from dc
-            dc_byte_w_en_reg = 4'b0000;
+			//find Data from D cache
+			d_cache_r_sel = 1'b0;
 
-            if(dc_hit_in && dc_valid_in)begin
-                ram_en_out = 0;
-            end
-            else begin
-                ram_en_out = 1;
-            end
+			enable[1] = 1'b1;
+			compare[1] = 1'b1;
+			write[1] = 1'b0;
+			d_byte_w_en_out = 4'b0000;
 
-            // 设定�? ram 的访问行为，使用 ram_addr_ic, 只读
-            ram_addr_sel_reg = 2'b00;  // 高位表示是否写回，低位表示是 ic 还是 dc
-            ram_write_out = 0;
+			load = 2'b01;  //load cache line from D cache or RAM
+			//ram_addr_sel = 2'b00;//ram addr sel
 
-            if(counter_in ==  3'd4) begin
-                ram_en_out = 0;
-                status_next_reg = `STAT_NORMAL;
-                counter_next_reg = 0;
-            end
-            else begin
-                status_next_reg = `STAT_IC_MISS;
-                counter_next_reg = counter_in + `N_WORDS;
-            end
-        end
-        `STAT_DC_MISS:
-        begin
-            // 不使�? I-cache
-            ic_enable_reg = 0;
-            ic_cmp_reg = 0;
-            ic_write_reg = 0;
-            ic_valid_reg = 1;
-            ic_word_sel_reg = counter_in;
-            ic_byte_w_en_reg = 4'b0000;
 
-            // �? D-cache
-            dc_enable_reg = 1;
-            dc_cmp_reg = 0;
-            dc_write_reg = 1;
-            dc_valid_reg = 1;
-            dc_word_sel_reg = counter_in;
-            dc_byte_w_en_reg = 4'b1111;
+			ram_en_out = 1'b1; //read RAM
 
-            // �? ram
-            ram_addr_sel_reg = 2'b01;  // ram_addr_dc
-            ram_en_out = 1;
-            ram_write_out = 0;
+			ram_write_out = 1'b0;
+			next_status = `NORMAL; //I cache
 
-            if(counter_in ==  3'd4) begin
-                ram_en_out = 0;
-                status_next_reg = `STAT_NORMAL;
-                counter_next_reg = 0;
-            end
-            else begin
-                status_next_reg = `STAT_DC_MISS;
-                counter_next_reg = counter_in + `N_WORDS;
-            end
-        end
-        `STAT_DC_MISS_D:
-        begin
-            // 不使�? I-cache
-            ic_enable_reg = 0;
-            ic_cmp_reg = 0;
-            ic_write_reg = 0;
-            ic_valid_reg = 1;
-            ic_word_sel_reg = counter_in;
-            ic_byte_w_en_reg = 4'b0000;
+		end
+		`DC_MISS:
+		begin
+			//
+			enable[0] = 1'b0;
+			compare[0] = 1'b0;
+			write[0] = 1'b0;
+			i_byte_w_en_out = 4'b0000;
 
-            // �? D-cache
-            dc_enable_reg = 1;
-            dc_cmp_reg = 0;
-            dc_write_reg = 0;
-            dc_valid_reg = 1;
-            dc_word_sel_reg = counter_in;
-            dc_byte_w_en_reg = 4'b0000;
+			d_cache_r_sel = 1'b1;
 
-            // �? ram
-            ram_addr_sel_reg = 2'b11;  // ram_addr_dc_wb
-            ram_en_out = 1;
-            ram_write_out = 1;
+			enable[1] = 1'b1;
+			compare[1] = 1'b0;
+			write[1] = 1'b1;
+			d_byte_w_en_out = 4'b1111;
 
-            if(counter_in == `COUNT_FINISH) begin
-                status_next_reg = `STAT_DC_MISS;
-                counter_next_reg = 3'd0;  // Restart counter for D-cache loading
-            end
-            else begin
-                status_next_reg = `STAT_DC_MISS_D;
-                counter_next_reg = counter_in + `N_WORDS;
-            end
-        end
-        `STAT_DOUBLE_MISS:
-        begin
-            // �? I-cache
-            ic_enable_reg = 1;
-            ic_cmp_reg = 0;
-            ic_write_reg = 1;
-            ic_byte_w_en_reg = 4'b1111;
+			load = 2'b10;
 
-            ic_valid_reg = 1;
-            ic_word_sel_reg = counter_in;
+			//ram_addr_sel = 2'b01;
+			ram_en_out = 1'b1;
+			ram_write_out = 1'b0;
 
-            // �? D-cache
-            dc_enable_reg = 1;
-            dc_cmp_reg = 1;
-            dc_write_reg = 0;
-            dc_valid_reg = 1;
-            dc_word_sel_reg = counter_in;
-            dc_byte_w_en_reg = 4'b0000;
+			next_status = `NORMAL;
+		end
+		`DC_MISS_DIRTY:
+		begin
+			enable[0] = 1'b0;
+			compare[0] = 1'b0;
+			write[0] = 1'b0;
+			i_byte_w_en_out = 4'b0000;
 
-            // �? ram
-            ram_addr_sel_reg = 2'b00;  // ram_addr_ic
-            ram_write_out = 0;
+			d_cache_r_sel = 1'b1;
 
-            if (dc_hit_in && dc_valid_in) begin
-                ram_en_out = 0;
-            end
-            else begin
-                ram_en_out = 1;
-            end
-            if(counter_in ==  3'd4) begin
-                ram_en_out = 0;
-                status_next_reg = `STAT_DC_MISS;
-                counter_next_reg = 0;  // Restart counter for D-cache loading
-            end
+			enable[1] = 1'b1;
+			compare[1] = 1'b0;
+			write[1] =	1'b0;
+			d_byte_w_en_out = 4'b0000;
 
-            else begin
-                status_next_reg = `STAT_DOUBLE_MISS;
-                counter_next_reg = counter_in + `N_WORDS;
-            end
-        end
-        `STAT_DOUBLE_MISS_D:
-        begin
-            // 不使�? I-cache
-            ic_enable_reg = 0;
-            ic_cmp_reg = 0;
-            ic_write_reg = 0;
-            ic_byte_w_en_reg = 4'b0000;
-            ic_valid_reg = 1;
-            ic_word_sel_reg = counter_in;
+		//	ram_addr_sel = 2'b11;
+			load = 2'b00;
+			ram_en_out = 1'b1;
+			ram_write_out = 1'b1;
 
-            // �? D-cache
-            dc_enable_reg = 1;
-            dc_cmp_reg = 0;
-            dc_write_reg = 0;
-            dc_byte_w_en_reg = 4'b0000;
-            dc_valid_reg = 1;
-            dc_word_sel_reg = counter_in;
+			next_status = `DC_MISS;
+		end
 
-            // �? ram
-            ram_addr_sel_reg = 2'b11;  // ram_addr_dc_wb
-            ram_en_out = 1;
-            ram_write_out = 1;
+		`DOUBLE_MISS:
+		begin
+			enable[0] = 1'b1;
+			compare[0] = 1'b0;
+			write[0] = 1'b1;
+			i_byte_w_en_out = 4'b1111;
 
-            if(counter_in == `COUNT_FINISH) begin
-                status_next_reg = `STAT_DOUBLE_MISS;
-                counter_next_reg = 0;  // Restart counter for I-cache loading
-            end
-            else begin
-                status_next_reg = `STAT_DOUBLE_MISS_D;
-                counter_next_reg = counter_in + `N_WORDS;
-            end
-        end
-        default: /*normal*/
-        begin
-            // Normal 状�?�下生成�?常规的控制信号�??
+			d_cache_r_sel = 1'b0;
 
-            ic_enable_reg = ic_read_in;
-            ic_cmp_reg = 1;
-            ic_word_sel_reg = ic_word_sel_in;
-            ic_write_reg = 0;                          // I-cache 不会�? CPU 写�??
-            ic_byte_w_en_reg = 4'b0000;
+			enable[1] = 1'b1;
+			compare[1] = 1'b1;
+			write[1] = 1'b0;
+			d_byte_w_en_out = 4'b0000;
 
-            dc_enable_reg = dc_read_in | dc_write_in;  // D-cache 的使能要根据具体的请求来设定�?
-            dc_cmp_reg = 1;
-            dc_word_sel_reg = dc_word_sel_in;
-            dc_write_reg = dc_write_in;
-            dc_byte_w_en_reg = dc_byte_w_en_in;
+			load = 2'b01;  //load cache line from D cache or RAM
+			ram_en_out = 1'b1; //
+			ram_write_out = 1'b0;
 
-            // 当前并不�?要对 ram 进行操作
-            ram_addr_sel_reg = 2'b00;
-            ram_en_out = 0;
-            ram_write_out = 0;
+			next_status = `DC_MISS;
 
-            /* cache_2way 响应 */
+		end
+		`DOUBLE_MISS_DC_DIRTY:
+		begin
+			enable[0] = 1'b0;
+			compare[0] = 1'b0;
+			write[0] = 1'b0;
+			i_byte_w_en_out = 4'b0000;
 
-            ic_valid_reg = 1;
-            dc_valid_reg = 1;
+			d_cache_r_sel = 1'b1;
 
-            counter_next_reg = 0;  // We can always reset counter in NORMAL status, as all other status using counter starting from 0.
+			enable[1] = 1'b1;
+			compare[1] = 1'b0;
+			write[1] = 1'b0;
+			d_byte_w_en_out = 4'b0000;
 
-            // 根据访问结果，决定下�?状�?�，先判�? D-cache miss, 再判�? I-cache miss, �?后判�? I-cache miss�?
-            if(dc_enable_reg && !(dc_hit_in && dc_valid_in)) begin //dc miss
-                if(ic_enable_reg && !(ic_hit_in && ic_valid_in)) begin //dc miss & ic miss
-                    if(dc_dirty_in) begin //dc miss & ic miss & dc dirty
-                        status_next_reg = `STAT_DOUBLE_MISS_D;
-                    end
-                    else begin //dc miss & ic miss & dc not dirty
-                        status_next_reg = `STAT_DOUBLE_MISS;
-                    end
-                end
-                else begin
-                    if(dc_dirty_in) begin //dc miss & ic hit & dc dirty
-                        status_next_reg = `STAT_DC_MISS_D;
-                    end
-                    else begin //dc miss & ic hit & dc not dirty
-                        status_next_reg = `STAT_DC_MISS;
-                    end
-                end
-            end
-            else begin //dc hit & ic miss
-                if(ic_enable_reg && !(ic_hit_in && ic_valid_in)) begin
-                    status_next_reg = `STAT_IC_MISS;
-                end
-                else begin //dc hit & ic hit
-                    status_next_reg = `STAT_NORMAL;
-                end
-            end
-        end
-    endcase 
-end
+			load = 2'b00;
+			ram_en_out = 1'b1;
+			ram_write_out = 1'b1;
 
+			next_status = `DOUBLE_MISS;
+		end
+		default:
+		begin
+			enable[0] = instr_req;
+			compare[0] = 1'b1;
+			write[0] = 1'b0;
+			i_byte_w_en_out = 4'b0000;
+
+			enable[1] = data_w_req | data_r_req;
+			compare[1] = 1'b1;
+			write[1] = data_w_req;
+			d_byte_w_en_out = byte_w_en_in;
+
+			load = 2'b00;
+			ram_en_out = 1'b0;
+			ram_write_out = 1'b0;
+			//ram_addr_sel = 2'b00;
+			d_cache_r_sel = 1'b1;
+
+			if(enable[1] && !hit[1]) begin
+				if(enable[0] && !hit[0]) begin //D cache miss and I cache miss
+					if(dirty[1]) begin
+						next_status = `DOUBLE_MISS_DC_DIRTY; //D cache dirty
+					end
+					else begin
+						next_status = `DOUBLE_MISS;
+					end
+				end
+				else begin //D cache miss and I cache hit
+					if(dirty[1]) begin
+						next_status = `DC_MISS_DIRTY;
+					end
+					else begin
+						next_status = `DC_MISS; //D cache miss and I cache hit
+					end
+				end
+			end
+			else begin
+				if(enable[0] && !hit[0]) begin  //D cache hit amd  I cache miss
+					next_status = `IC_MISS;
+				end
+				else begin
+					next_status = `NORMAL; //D cache hit amd  I cache hit
+				end
+			end
+
+		end
+		endcase
+	end
 endmodule
