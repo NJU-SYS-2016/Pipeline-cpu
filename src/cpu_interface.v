@@ -422,24 +422,24 @@ always @ (*) begin
 
     vga_addr[14:2] = dmem_addr[12:0]; //dmem_addr is four byte aligned
     case(dmem_byte_w_en)
-        4'b1000: begin
-            vga_addr[1:0] = 2'd0;
+        4'b0001: begin
+            vga_addr[1:0] = 2'd3;
             char_to_vga = data_from_reg[7:0];
-        end
-        4'b0100: begin
-            vga_addr[1:0] = 2'd1;
-            char_to_vga = data_from_reg[15:8];
         end
         4'b0010: begin
             vga_addr[1:0] = 2'd2;
+            char_to_vga = data_from_reg[15:8];
+        end
+        4'b0100: begin
+            vga_addr[1:0] = 2'd1;
             char_to_vga = data_from_reg[23:16];
         end
-        4'b0001: begin
-            vga_addr[1:0] = 2'd3;
+        4'b1000: begin
+            vga_addr[1:0] = 2'd0;
             char_to_vga = data_from_reg[31:24];
         end
         default: begin // remove latch, but should never be encountered
-            vga_addr[1:0] = 2'd3;
+            vga_addr[1:0] = 2'd0;
             char_to_vga = data_from_reg[31:24];
         end
     endcase
