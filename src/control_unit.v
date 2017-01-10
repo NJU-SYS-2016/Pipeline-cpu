@@ -48,14 +48,7 @@ module control_unit(
 		end
 		else begin
 			//中断异常处理
-			if(mem_stall == 1'b1) begin
-				cu_pc_stall		=		1'b1;
-				cu_ifid_stall		=		1'b1;
-				cu_idex_stall		=		1'b1;
-				cu_exmem_stall	=		1'b1;
-				cu_memwb_stall	=		1'b1;
-			end
-			else if(mem_excepttype != 32'h0) begin
+			if(mem_excepttype != 32'h0) begin
 				cu_ifid_flush		=		1'b1;
 				cu_idex_flush		=		1'b1;
 				cu_exmem_flush		=		1'b1;
@@ -85,6 +78,13 @@ module control_unit(
 						cu_pc_src	=	`pc_eret;
 					end
 				endcase
+			end
+			else if(mem_stall == 1'b1) begin
+				cu_pc_stall		=		1'b1;
+				cu_ifid_stall		=		1'b1;
+				cu_idex_stall		=		1'b1;
+				cu_exmem_stall	=		1'b1;
+				cu_memwb_stall	=		1'b1;
 			end
 			else begin
 				//分支处理，控制异�?
