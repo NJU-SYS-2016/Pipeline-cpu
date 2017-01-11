@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Tue Jan 10 19:22:33 2017
+# Process ID: 9893
+# Current directory: /home/tyh/Documents/pipeline/pipeline.runs/synth_1
+# Command line: vivado -log pipeline.vds -mode batch -messageDb vivado.pb -notrace -source pipeline.tcl
+# Log file: /home/tyh/Documents/pipeline/pipeline.runs/synth_1/pipeline.vds
+# Journal file: /home/tyh/Documents/pipeline/pipeline.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source pipeline.tcl -notrace

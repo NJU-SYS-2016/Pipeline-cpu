@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="text_mem_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1484039322">
+  <File Type="RDS-UTIL" Name="text_mem_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="text_mem_drc_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="text_mem_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="text_mem.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="text_mem_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="text_mem_timing_summary_synth.pb"/>
+  <File Type="RDS-RDS" Name="text_mem.vds"/>
+  <File Type="PA-TCL" Name="text_mem.tcl"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/text_mem">
+    <File Path="$PPRDIR/../../../../Desktop/project /project.srcs/sources_1/ip/text_mem/text_mem.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="text_mem"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/text_mem">
+    <File Path="$PPRDIR/../../../../Desktop/project /project.srcs/sources_1/ip/text_mem/text_mem.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="text_mem"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

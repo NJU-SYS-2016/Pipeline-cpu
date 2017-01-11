@@ -1,0 +1,649 @@
+***************************************************************************************
+*                      PROJECT ARCHIVE SUMMARY REPORT
+*
+*                      (archive_project_summary.txt)
+*
+*  PLEASE READ THIS REPORT TO GET THE DETAILED INFORMATION ABOUT THE PROJECT DATA THAT
+*  WAS ARCHIVED FOR THE CURRENT PROJECT
+*
+* The report is divided into following five sections:-
+*
+* Section (1) - PROJECT INFORMATION
+*  This section provides the details of the current project that was archived
+*
+* Section (2) - INCLUDED/EXCLUDED RUNS
+*  This section summarizes the list of design runs for which the results were included
+*  or excluded from the archive
+*
+* Section (3) - ARCHIVED SOURCES
+*  This section summarizes the list of files that were added to the archive
+*
+* Section (3.1) - INCLUDE FILES
+*  This section summarizes the list of 'include' files that were added to the archive
+*
+* Section (3.1.1) - INCLUDE_DIRS SETTINGS
+*  This section summarizes the 'verilog include directory' path settings, if any
+*
+* Section (3.2) - REMOTE SOURCES
+*  This section summarizes the list of referenced 'remote' files that were 'imported'
+*  into the archived project
+*
+* Section (3.3) - SOURCES SUMMARY
+*  This section summarizes the list of all the files present in the archive
+*
+* Section (3.4) - REMOTE IP DEFINITIONS
+*  This section summarizes the list of all the remote IP's present in the archive
+*
+* Section (4) - JOURNAL/LOG FILES
+*  This section summarizes the list of journal/log files that were added to the archive
+*
+***************************************************************************************
+
+Section (1) - PROJECT INFORMATION
+---------------------------------
+Name      = pipeline
+Directory = /home/tyh/Documents/pipeline
+
+WARNING: Please verify the compiled library directory path for the following property in the
+         current project. The path may point to an invalid location after opening this project.
+         This could happen if the project was unarchived in a location where this path is not
+         accessible. To resolve this issue, please set this property with the desired path
+         before launching simulation:-
+
+Property = compxlib.xsim_compiled_library_dir
+Path     = 
+
+Section (2) - INCLUDED RUNS
+---------------------------
+The run results were included for the following runs in the archived project:-
+
+<synth_1>
+<mult_gen_0_synth_1>
+<div_gen_0_synth_1>
+<font_mem_synth_1>
+<loader_mem_synth_1>
+<mig_7series_0_synth_1>
+<ddr_clock_gen_synth_1>
+<text_mem_synth_1>
+<impl_1>
+
+Section (3) - ARCHIVED SOURCES
+------------------------------
+The following sub-sections describes the list of sources that were archived for the current project:-
+
+Section (3.1) - INCLUDE FILES
+-----------------------------
+List of referenced 'RTL Include' files that were 'imported' into the archived project:-
+
+None
+
+Section (3.1.1) - INCLUDE_DIRS SETTINGS
+---------------------------------------
+List of the "INCLUDE_DIRS" fileset property settings that may or may not be applicable in the archived
+project, since most the 'RTL Include' files referenced in the original project were 'imported' into the
+archived project.
+
+<sources_1> fileset RTL include directory paths (INCLUDE_DIRS):-
+None
+
+<sim_1> fileset RTL include directory paths (INCLUDE_DIRS):-
+None
+
+Section (3.2) - REMOTE SOURCES
+------------------------------
+List of referenced 'remote' design files that were 'imported' into the archived project:-
+
+<ddr_clock_gen>
+/home/tyh/Desktop/project /project.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen.xci
+/home/tyh/Desktop/project /project.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen_board.xdc
+/home/tyh/Desktop/project /project.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen.veo
+/home/tyh/Desktop/project /project.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen.dcp
+/home/tyh/Desktop/project /project.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen_stub.v
+/home/tyh/Desktop/project /project.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen_stub.vhdl
+/home/tyh/Desktop/project /project.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen_sim_netlist.v
+/home/tyh/Desktop/project /project.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen_sim_netlist.vhdl
+/home/tyh/Desktop/project /project.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen.xdc
+/home/tyh/Desktop/project /project.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen_ooc.xdc
+/home/tyh/Desktop/project /project.srcs/ddr_clock_gen/ip/ddr_clock_gen/clk_wiz_v5_3_1/mmcm_pll_drp_func_7s_mmcm.vh
+/home/tyh/Desktop/project /project.srcs/ddr_clock_gen/ip/ddr_clock_gen/clk_wiz_v5_3_1/mmcm_pll_drp_func_7s_pll.vh
+/home/tyh/Desktop/project /project.srcs/ddr_clock_gen/ip/ddr_clock_gen/clk_wiz_v5_3_1/mmcm_pll_drp_func_us_mmcm.vh
+/home/tyh/Desktop/project /project.srcs/ddr_clock_gen/ip/ddr_clock_gen/clk_wiz_v5_3_1/mmcm_pll_drp_func_us_pll.vh
+/home/tyh/Desktop/project /project.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen_clk_wiz.v
+/home/tyh/Desktop/project /project.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen.v
+/home/tyh/Desktop/project /project.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen.xml
+
+<div_gen_0>
+None
+
+<font_mem>
+/home/tyh/Desktop/project /project.srcs/font_mem/ip/font_mem/font_mem.xci
+/home/tyh/Desktop/project /project.srcs/font_mem/ip/font_mem/doc/blk_mem_gen_v8_3_changelog.txt
+/home/tyh/Desktop/project /project.srcs/font_mem/ip/font_mem/font_mem.vho
+/home/tyh/Desktop/project /project.srcs/font_mem/ip/font_mem/font_mem.veo
+/home/tyh/Desktop/project /project.srcs/font_mem/ip/font_mem/summary.log
+/home/tyh/Desktop/project /project.srcs/font_mem/ip/font_mem/misc/blk_mem_gen_v8_3.vhd
+/home/tyh/Desktop/project /project.srcs/font_mem/ip/font_mem/font_mem.mif
+/home/tyh/Desktop/project /project.srcs/font_mem/ip/font_mem/blk_mem_gen_v8_3_3/simulation/blk_mem_gen_v8_3.v
+/home/tyh/Desktop/project /project.srcs/font_mem/ip/font_mem/sim/font_mem.v
+/home/tyh/Desktop/project /project.srcs/font_mem/ip/font_mem/font_mem.dcp
+/home/tyh/Desktop/project /project.srcs/font_mem/ip/font_mem/font_mem_stub.v
+/home/tyh/Desktop/project /project.srcs/font_mem/ip/font_mem/font_mem_stub.vhdl
+/home/tyh/Desktop/project /project.srcs/font_mem/ip/font_mem/font_mem_sim_netlist.v
+/home/tyh/Desktop/project /project.srcs/font_mem/ip/font_mem/font_mem_sim_netlist.vhdl
+/home/tyh/Desktop/project /project.srcs/font_mem/ip/font_mem/font_mem_ooc.xdc
+/home/tyh/Desktop/project /project.srcs/font_mem/ip/font_mem/blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3_vhsyn_rfs.vhd
+/home/tyh/Desktop/project /project.srcs/font_mem/ip/font_mem/blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3.vhd
+/home/tyh/Desktop/project /project.srcs/font_mem/ip/font_mem/synth/font_mem.vhd
+/home/tyh/Desktop/project /project.srcs/font_mem/ip/font_mem/font_mem.xml
+/home/tyh/Downloads/ArchLab2015/font.coe
+
+<loader_mem>
+/home/tyh/Desktop/project /project.srcs/loader_mem/ip/loader_mem/loader_mem.xci
+/home/tyh/Desktop/project /project.srcs/loader_mem/ip/loader_mem/doc/blk_mem_gen_v8_3_changelog.txt
+/home/tyh/Desktop/project /project.srcs/loader_mem/ip/loader_mem/loader_mem.vho
+/home/tyh/Desktop/project /project.srcs/loader_mem/ip/loader_mem/loader_mem.veo
+/home/tyh/Desktop/project /project.srcs/loader_mem/ip/loader_mem/summary.log
+/home/tyh/Desktop/project /project.srcs/loader_mem/ip/loader_mem/misc/blk_mem_gen_v8_3.vhd
+/home/tyh/Desktop/project /project.srcs/loader_mem/ip/loader_mem/loader_mem.mif
+/home/tyh/Desktop/project /project.srcs/loader_mem/ip/loader_mem/blk_mem_gen_v8_3_3/simulation/blk_mem_gen_v8_3.v
+/home/tyh/Desktop/project /project.srcs/loader_mem/ip/loader_mem/sim/loader_mem.v
+/home/tyh/Desktop/project /project.srcs/loader_mem/ip/loader_mem/loader_mem.dcp
+/home/tyh/Desktop/project /project.srcs/loader_mem/ip/loader_mem/loader_mem_stub.v
+/home/tyh/Desktop/project /project.srcs/loader_mem/ip/loader_mem/loader_mem_stub.vhdl
+/home/tyh/Desktop/project /project.srcs/loader_mem/ip/loader_mem/loader_mem_sim_netlist.v
+/home/tyh/Desktop/project /project.srcs/loader_mem/ip/loader_mem/loader_mem_sim_netlist.vhdl
+/home/tyh/Desktop/project /project.srcs/loader_mem/ip/loader_mem/loader_mem_ooc.xdc
+/home/tyh/Desktop/project /project.srcs/loader_mem/ip/loader_mem/blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3_vhsyn_rfs.vhd
+/home/tyh/Desktop/project /project.srcs/loader_mem/ip/loader_mem/blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3.vhd
+/home/tyh/Desktop/project /project.srcs/loader_mem/ip/loader_mem/synth/loader_mem.vhd
+/home/tyh/Desktop/project /project.srcs/loader_mem/ip/loader_mem/loader_mem.xml
+/home/tyh/Downloads/ArchLab2015/ram_init_gen/loader.coe
+
+<mig_7series_0>
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0.xci
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0_ooc.xdc
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0.veo
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0.dcp
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0_stub.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0_stub.vhdl
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0_sim_netlist.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0_sim_netlist.vhdl
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ecc/mig_7series_v4_0_ecc_dec_fix.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ecc/mig_7series_v4_0_ecc_gen.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ecc/mig_7series_v4_0_ecc_merge_enc.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ecc/mig_7series_v4_0_fi_xor.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ecc/mig_7series_v4_0_ecc_buf.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_0_ui_top.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_0_ui_rd_data.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_0_ui_wr_data.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_0_ui_cmd.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_0_iodelay_ctrl.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_0_infrastructure.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_0_clk_ibuf.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_0_tempmon.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ip_top/mig_7series_v4_0_memc_ui_top_std.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ip_top/mig_7series_v4_0_mem_intfc.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_mc_phy_wrapper.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_rdlvl.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_if_post_fifo.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_dqs_found_cal.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_top.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_poc_tap_base.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_of_pre_fifo.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_wrlvl_off_delay.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_ocd_lim.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_poc_pd.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_prbs_gen.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_poc_top.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_byte_lane.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_ocd_edge.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_oclkdelay_cal.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_byte_group_io.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_ck_addr_cmd_delay.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_prbs_rdlvl.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_init.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_poc_cc.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_4lanes.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_wrcal.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_ocd_cntlr.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_dqs_found_cal_hr.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_ocd_mux.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_mc_phy.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_poc_edge_store.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_calib_top.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_wrlvl.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_tempmon.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_ocd_po_cntlr.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_ocd_samp.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_ocd_data.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_poc_meta.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_rank_cntrl.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_bank_compare.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_bank_mach.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_rank_common.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_bank_state.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_rank_mach.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_round_robin_arb.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_arb_row_col.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_col_mach.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_bank_cntrl.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_arb_select.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_bank_common.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_mc.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_bank_queue.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_arb_mux.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0_mig.v
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0.xml
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_b.prj
+
+<mult_gen_0>
+None
+
+<text_mem>
+/home/tyh/Desktop/project /project.srcs/sources_1/ip/text_mem/text_mem.xci
+/home/tyh/Desktop/project /project.srcs/sources_1/ip/text_mem/text_mem.vho
+/home/tyh/Desktop/project /project.srcs/sources_1/ip/text_mem/text_mem.veo
+/home/tyh/Desktop/project /project.srcs/sources_1/ip/text_mem/text_mem.dcp
+/home/tyh/Desktop/project /project.srcs/sources_1/ip/text_mem/text_mem_stub.v
+/home/tyh/Desktop/project /project.srcs/sources_1/ip/text_mem/text_mem_stub.vhdl
+/home/tyh/Desktop/project /project.srcs/sources_1/ip/text_mem/text_mem_sim_netlist.v
+/home/tyh/Desktop/project /project.srcs/sources_1/ip/text_mem/text_mem_sim_netlist.vhdl
+/home/tyh/Desktop/project /project.srcs/sources_1/ip/text_mem/text_mem_ooc.xdc
+/home/tyh/Desktop/project /project.srcs/sources_1/ip/text_mem/blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3_vhsyn_rfs.vhd
+/home/tyh/Desktop/project /project.srcs/sources_1/ip/text_mem/blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3.vhd
+/home/tyh/Desktop/project /project.srcs/sources_1/ip/text_mem/synth/text_mem.vhd
+/home/tyh/Desktop/project /project.srcs/sources_1/ip/text_mem/text_mem.xml
+
+<constrs_1>
+/home/tyh/Desktop/project /project.srcs/constrs_1/imports/constrain/top.xdc
+
+<sim_1>
+/home/tyh/Documents/cache-design/code/status.vh
+
+<sources_1>
+/home/tyh/Documents/cache-design/code/memc.v
+/home/tyh/Documents/cache-design/code/memv.v
+/home/tyh/Documents/cache-design/code/cache_word_memc.v
+/home/tyh/Documents/cache-design/code/direct_mapped_cache.v
+/home/tyh/Documents/cache-design/code/victim_line_decide.v
+/home/tyh/Documents/cache-design/code/status.vh
+/home/tyh/Documents/cache-design/code/cache_control.v
+/home/tyh/Documents/cache-design/code/two_ways_cache.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/cache/DDRControlModule.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/spi_tr8.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/vga_view.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/adder.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/alu_controller.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/count_leading_zero.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/vga_ctrl.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/vga_module.v
+/home/tyh/Documents/cache-design/code/cache_top.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/load_b_w_e_gen.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/cache/ddr_control.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/interrupt_except_handle.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/FU.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/idex_reg.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/except_detect1.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/muldiv.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/exmem_reg.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/vga.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/hex_to_seg.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/decoder.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/ALU.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/SHIFT.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/Ext_unit.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/pc.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/reg_w_gen.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/GPR.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/cp0.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/control_unit.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/is_delayslot.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/except_detect2.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/ifid_reg.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/memwb_reg.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/final_target.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/keyboard.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/store_b_w_e_gen.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/load_shifter.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/store_shifter.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/spi_flash.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/MUX.v
+/home/tyh/Documents/cache-design/code/cache_manage_unit.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/clock_control.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/breakpoint.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/cpu_top.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/seg_ctrl.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/cpu_interface.v
+/home/tyh/SYS_LAB/Pipeline-cpu/src/pipeline.v
+/home/tyh/Downloads/ArchLab2015/ram_init_gen/loader.coe
+/home/tyh/Downloads/ArchLab2015/ram_init_gen/font.coe
+/home/tyh/Downloads/ArchLab2015/font.coe
+/home/tyh/Desktop/project /project.srcs/mig_7series_0/ip/mig_7series_0/mig_b.prj
+/home/tyh/Desktop/project /project.srcs/sources_1/imports/lab5/test/ArchLab2015/ram_init_gen/loader.coe
+
+Section (3.3) - SOURCES SUMMARY
+-------------------------------
+List of all the source files present in the archived project:-
+
+<sources_1>
+./pipeline.srcs/sources_1/imports/tyh/Documents/cache-design/code/memc.v
+./pipeline.srcs/sources_1/imports/tyh/Documents/cache-design/code/memv.v
+./pipeline.srcs/sources_1/imports/tyh/Documents/cache-design/code/cache_word_memc.v
+./pipeline.srcs/sources_1/imports/tyh/Documents/cache-design/code/direct_mapped_cache.v
+./pipeline.srcs/sources_1/imports/tyh/Documents/cache-design/code/victim_line_decide.v
+./pipeline.srcs/sources_1/imports/tyh/Documents/cache-design/code/status.vh
+./pipeline.srcs/sources_1/imports/tyh/Documents/cache-design/code/cache_control.v
+./pipeline.srcs/sources_1/imports/tyh/Documents/cache-design/code/two_ways_cache.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/cache/DDRControlModule.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/spi_tr8.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/vga_view.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/adder.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/alu_controller.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/count_leading_zero.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/vga_ctrl.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/vga_module.v
+./pipeline.srcs/sources_1/imports/tyh/Documents/cache-design/code/cache_top.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/load_b_w_e_gen.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/cache/ddr_control.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/interrupt_except_handle.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/FU.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/idex_reg.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/except_detect1.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/muldiv.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/exmem_reg.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/vga.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/hex_to_seg.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/decoder.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/ALU.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/SHIFT.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/Ext_unit.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/pc.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/reg_w_gen.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/GPR.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/cp0.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/control_unit.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/is_delayslot.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/except_detect2.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/ifid_reg.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/memwb_reg.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/final_target.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/keyboard.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/store_b_w_e_gen.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/load_shifter.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/store_shifter.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/spi_flash.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/MUX.v
+./pipeline.srcs/sources_1/imports/tyh/Documents/cache-design/code/cache_manage_unit.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/clock_control.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/breakpoint.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/cpu_top.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/seg_ctrl.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/cpu_interface.v
+./pipeline.srcs/sources_1/imports/tyh/SYS_LAB/Pipeline-cpu/src/pipeline.v
+./pipeline.srcs/sources_1/imports/tyh/Downloads/ArchLab2015/ram_init_gen/loader.coe
+./pipeline.srcs/sources_1/imports/tyh/Downloads/ArchLab2015/ram_init_gen/font.coe
+./pipeline.srcs/sources_1/imports/tyh/Downloads/ArchLab2015/font.coe
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_b.prj
+./pipeline.srcs/sources_1/imports/tyh/Desktop/project/project.srcs/sources_1/imports/lab5/test/ArchLab2015/ram_init_gen/loader.coe
+
+<constrs_1>
+./pipeline.srcs/constrs_1/imports/constrain/top.xdc
+
+<sim_1>
+./pipeline.srcs/sim_1/imports/code/status.vh
+
+<mult_gen_0>
+./pipeline.srcs/sources_1/ip/mult_gen_0/mult_gen_0.xci
+./pipeline.srcs/sources_1/ip/mult_gen_0/doc/mult_gen_v12_0_changelog.txt
+./pipeline.srcs/sources_1/ip/mult_gen_0/mult_gen_0.vho
+./pipeline.srcs/sources_1/ip/mult_gen_0/mult_gen_0.veo
+./pipeline.srcs/sources_1/ip/mult_gen_0/xbip_utils_v3_0_6/hdl/xbip_utils_v3_0_vh_rfs.vhd
+./pipeline.srcs/sources_1/ip/mult_gen_0/xbip_pipe_v3_0_2/hdl/xbip_pipe_v3_0_vh_rfs.vhd
+./pipeline.srcs/sources_1/ip/mult_gen_0/xbip_pipe_v3_0_2/hdl/xbip_pipe_v3_0.vhd
+./pipeline.srcs/sources_1/ip/mult_gen_0/xbip_bram18k_v3_0_2/hdl/xbip_bram18k_v3_0_vh_rfs.vhd
+./pipeline.srcs/sources_1/ip/mult_gen_0/xbip_bram18k_v3_0_2/hdl/xbip_bram18k_v3_0.vhd
+./pipeline.srcs/sources_1/ip/mult_gen_0/mult_gen_v12_0_11/hdl/mult_gen_v12_0_vh_rfs.vhd
+./pipeline.srcs/sources_1/ip/mult_gen_0/mult_gen_v12_0_11/hdl/mult_gen_v12_0.vhd
+./pipeline.srcs/sources_1/ip/mult_gen_0/sim/mult_gen_0.vhd
+./pipeline.srcs/sources_1/ip/mult_gen_0/mult_gen_0.dcp
+./pipeline.srcs/sources_1/ip/mult_gen_0/mult_gen_0_stub.v
+./pipeline.srcs/sources_1/ip/mult_gen_0/mult_gen_0_stub.vhdl
+./pipeline.srcs/sources_1/ip/mult_gen_0/mult_gen_0_sim_netlist.v
+./pipeline.srcs/sources_1/ip/mult_gen_0/mult_gen_0_sim_netlist.vhdl
+./pipeline.srcs/sources_1/ip/mult_gen_0/synth/mult_gen_0.vhd
+./pipeline.srcs/sources_1/ip/mult_gen_0/mult_gen_0_ooc.xdc
+./pipeline.srcs/sources_1/ip/mult_gen_0/mult_gen_0.xml
+
+<div_gen_0>
+./pipeline.srcs/sources_1/ip/div_gen_0/div_gen_0.xci
+./pipeline.srcs/sources_1/ip/div_gen_0/doc/div_gen_v5_1_changelog.txt
+./pipeline.srcs/sources_1/ip/div_gen_0/cmodel/div_gen_v5_1_bitacc_cmodel_lin64.zip
+./pipeline.srcs/sources_1/ip/div_gen_0/cmodel/div_gen_v5_1_bitacc_cmodel_nt64.zip
+./pipeline.srcs/sources_1/ip/div_gen_0/div_gen_0.vho
+./pipeline.srcs/sources_1/ip/div_gen_0/div_gen_0.veo
+./pipeline.srcs/sources_1/ip/div_gen_0/xbip_utils_v3_0_6/hdl/xbip_utils_v3_0_vh_rfs.vhd
+./pipeline.srcs/sources_1/ip/div_gen_0/axi_utils_v2_0_2/hdl/axi_utils_v2_0_vh_rfs.vhd
+./pipeline.srcs/sources_1/ip/div_gen_0/xbip_pipe_v3_0_2/hdl/xbip_pipe_v3_0_vh_rfs.vhd
+./pipeline.srcs/sources_1/ip/div_gen_0/xbip_pipe_v3_0_2/hdl/xbip_pipe_v3_0.vhd
+./pipeline.srcs/sources_1/ip/div_gen_0/xbip_dsp48_wrapper_v3_0_4/hdl/xbip_dsp48_wrapper_v3_0_vh_rfs.vhd
+./pipeline.srcs/sources_1/ip/div_gen_0/xbip_dsp48_addsub_v3_0_2/hdl/xbip_dsp48_addsub_v3_0_vh_rfs.vhd
+./pipeline.srcs/sources_1/ip/div_gen_0/xbip_dsp48_addsub_v3_0_2/hdl/xbip_dsp48_addsub_v3_0.vhd
+./pipeline.srcs/sources_1/ip/div_gen_0/xbip_bram18k_v3_0_2/hdl/xbip_bram18k_v3_0_vh_rfs.vhd
+./pipeline.srcs/sources_1/ip/div_gen_0/xbip_bram18k_v3_0_2/hdl/xbip_bram18k_v3_0.vhd
+./pipeline.srcs/sources_1/ip/div_gen_0/mult_gen_v12_0_11/hdl/mult_gen_v12_0_vh_rfs.vhd
+./pipeline.srcs/sources_1/ip/div_gen_0/mult_gen_v12_0_11/hdl/mult_gen_v12_0.vhd
+./pipeline.srcs/sources_1/ip/div_gen_0/floating_point_v7_0_12/hdl/floating_point_v7_0_vh_rfs.vhd
+./pipeline.srcs/sources_1/ip/div_gen_0/xbip_dsp48_mult_v3_0_2/hdl/xbip_dsp48_mult_v3_0_vh_rfs.vhd
+./pipeline.srcs/sources_1/ip/div_gen_0/xbip_dsp48_mult_v3_0_2/hdl/xbip_dsp48_mult_v3_0.vhd
+./pipeline.srcs/sources_1/ip/div_gen_0/xbip_dsp48_multadd_v3_0_2/hdl/xbip_dsp48_multadd_v3_0_vh_rfs.vhd
+./pipeline.srcs/sources_1/ip/div_gen_0/xbip_dsp48_multadd_v3_0_2/hdl/xbip_dsp48_multadd_v3_0.vhd
+./pipeline.srcs/sources_1/ip/div_gen_0/div_gen_v5_1_10/hdl/div_gen_v5_1_vh_rfs.vhd
+./pipeline.srcs/sources_1/ip/div_gen_0/div_gen_v5_1_10/hdl/div_gen_v5_1.vhd
+./pipeline.srcs/sources_1/ip/div_gen_0/sim/div_gen_0.vhd
+./pipeline.srcs/sources_1/ip/div_gen_0/div_gen_0.dcp
+./pipeline.srcs/sources_1/ip/div_gen_0/div_gen_0_stub.v
+./pipeline.srcs/sources_1/ip/div_gen_0/div_gen_0_stub.vhdl
+./pipeline.srcs/sources_1/ip/div_gen_0/div_gen_0_sim_netlist.v
+./pipeline.srcs/sources_1/ip/div_gen_0/div_gen_0_sim_netlist.vhdl
+./pipeline.srcs/sources_1/ip/div_gen_0/synth/div_gen_0.vhd
+./pipeline.srcs/sources_1/ip/div_gen_0/div_gen_0_ooc.xdc
+./pipeline.srcs/sources_1/ip/div_gen_0/demo_tb/tb_div_gen_0.vhd
+./pipeline.srcs/sources_1/ip/div_gen_0/div_gen_0.xml
+
+<font_mem>
+./pipeline.srcs/font_mem/ip/font_mem/font_mem.xci
+./pipeline.srcs/font_mem/ip/font_mem/doc/blk_mem_gen_v8_3_changelog.txt
+./pipeline.srcs/font_mem/ip/font_mem/font_mem.vho
+./pipeline.srcs/font_mem/ip/font_mem/font_mem.veo
+./pipeline.srcs/font_mem/ip/font_mem/summary.log
+./pipeline.srcs/font_mem/ip/font_mem/misc/blk_mem_gen_v8_3.vhd
+./pipeline.srcs/font_mem/ip/font_mem/font_mem.mif
+./pipeline.srcs/font_mem/ip/font_mem/blk_mem_gen_v8_3_3/simulation/blk_mem_gen_v8_3.v
+./pipeline.srcs/font_mem/ip/font_mem/sim/font_mem.v
+./pipeline.srcs/font_mem/ip/font_mem/font_mem.dcp
+./pipeline.srcs/font_mem/ip/font_mem/font_mem_stub.v
+./pipeline.srcs/font_mem/ip/font_mem/font_mem_stub.vhdl
+./pipeline.srcs/font_mem/ip/font_mem/font_mem_sim_netlist.v
+./pipeline.srcs/font_mem/ip/font_mem/font_mem_sim_netlist.vhdl
+./pipeline.srcs/font_mem/ip/font_mem/font_mem_ooc.xdc
+./pipeline.srcs/font_mem/ip/font_mem/blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3_vhsyn_rfs.vhd
+./pipeline.srcs/font_mem/ip/font_mem/blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3.vhd
+./pipeline.srcs/font_mem/ip/font_mem/synth/font_mem.vhd
+./pipeline.srcs/font_mem/ip/font_mem/font_mem.xml
+./pipeline.srcs/sources_1/imports/tyh/Downloads/ArchLab2015/font.coe
+
+<loader_mem>
+./pipeline.srcs/loader_mem/ip/loader_mem/loader_mem.xci
+./pipeline.srcs/loader_mem/ip/loader_mem/doc/blk_mem_gen_v8_3_changelog.txt
+./pipeline.srcs/loader_mem/ip/loader_mem/loader_mem.vho
+./pipeline.srcs/loader_mem/ip/loader_mem/loader_mem.veo
+./pipeline.srcs/loader_mem/ip/loader_mem/summary.log
+./pipeline.srcs/loader_mem/ip/loader_mem/misc/blk_mem_gen_v8_3.vhd
+./pipeline.srcs/loader_mem/ip/loader_mem/loader_mem.mif
+./pipeline.srcs/loader_mem/ip/loader_mem/blk_mem_gen_v8_3_3/simulation/blk_mem_gen_v8_3.v
+./pipeline.srcs/loader_mem/ip/loader_mem/sim/loader_mem.v
+./pipeline.srcs/loader_mem/ip/loader_mem/loader_mem.dcp
+./pipeline.srcs/loader_mem/ip/loader_mem/loader_mem_stub.v
+./pipeline.srcs/loader_mem/ip/loader_mem/loader_mem_stub.vhdl
+./pipeline.srcs/loader_mem/ip/loader_mem/loader_mem_sim_netlist.v
+./pipeline.srcs/loader_mem/ip/loader_mem/loader_mem_sim_netlist.vhdl
+./pipeline.srcs/loader_mem/ip/loader_mem/loader_mem_ooc.xdc
+./pipeline.srcs/loader_mem/ip/loader_mem/blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3_vhsyn_rfs.vhd
+./pipeline.srcs/loader_mem/ip/loader_mem/blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3.vhd
+./pipeline.srcs/loader_mem/ip/loader_mem/synth/loader_mem.vhd
+./pipeline.srcs/loader_mem/ip/loader_mem/loader_mem.xml
+./pipeline.srcs/sources_1/imports/tyh/Downloads/ArchLab2015/ram_init_gen/loader.coe
+
+<mig_7series_0>
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0.xci
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0_ooc.xdc
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0.veo
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0.dcp
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0_stub.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0_stub.vhdl
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0_sim_netlist.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0_sim_netlist.vhdl
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ecc/mig_7series_v4_0_ecc_dec_fix.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ecc/mig_7series_v4_0_ecc_gen.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ecc/mig_7series_v4_0_ecc_merge_enc.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ecc/mig_7series_v4_0_fi_xor.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ecc/mig_7series_v4_0_ecc_buf.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_0_ui_top.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_0_ui_rd_data.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_0_ui_wr_data.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_0_ui_cmd.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_0_iodelay_ctrl.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_0_infrastructure.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_0_clk_ibuf.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_0_tempmon.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ip_top/mig_7series_v4_0_memc_ui_top_std.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/ip_top/mig_7series_v4_0_mem_intfc.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_mc_phy_wrapper.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_rdlvl.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_if_post_fifo.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_dqs_found_cal.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_top.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_poc_tap_base.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_of_pre_fifo.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_wrlvl_off_delay.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_ocd_lim.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_poc_pd.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_prbs_gen.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_poc_top.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_byte_lane.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_ocd_edge.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_oclkdelay_cal.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_byte_group_io.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_ck_addr_cmd_delay.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_prbs_rdlvl.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_init.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_poc_cc.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_4lanes.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_wrcal.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_ocd_cntlr.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_dqs_found_cal_hr.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_ocd_mux.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_mc_phy.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_poc_edge_store.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_calib_top.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_wrlvl.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_tempmon.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_ocd_po_cntlr.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_ocd_samp.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_ocd_data.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_0_poc_meta.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_rank_cntrl.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_bank_compare.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_bank_mach.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_rank_common.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_bank_state.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_rank_mach.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_round_robin_arb.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_arb_row_col.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_col_mach.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_bank_cntrl.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_arb_select.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_bank_common.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_mc.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_bank_queue.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_0_arb_mux.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0_mig.v
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_7series_0.xml
+./pipeline.srcs/mig_7series_0/ip/mig_7series_0/mig_b.prj
+
+<ddr_clock_gen>
+./pipeline.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen.xci
+./pipeline.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen_board.xdc
+./pipeline.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen.veo
+./pipeline.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen.dcp
+./pipeline.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen_stub.v
+./pipeline.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen_stub.vhdl
+./pipeline.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen_sim_netlist.v
+./pipeline.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen_sim_netlist.vhdl
+./pipeline.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen.xdc
+./pipeline.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen_ooc.xdc
+./pipeline.srcs/ddr_clock_gen/ip/ddr_clock_gen/clk_wiz_v5_3_1/mmcm_pll_drp_func_7s_mmcm.vh
+./pipeline.srcs/ddr_clock_gen/ip/ddr_clock_gen/clk_wiz_v5_3_1/mmcm_pll_drp_func_7s_pll.vh
+./pipeline.srcs/ddr_clock_gen/ip/ddr_clock_gen/clk_wiz_v5_3_1/mmcm_pll_drp_func_us_mmcm.vh
+./pipeline.srcs/ddr_clock_gen/ip/ddr_clock_gen/clk_wiz_v5_3_1/mmcm_pll_drp_func_us_pll.vh
+./pipeline.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen_clk_wiz.v
+./pipeline.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen.v
+./pipeline.srcs/ddr_clock_gen/ip/ddr_clock_gen/ddr_clock_gen.xml
+
+<text_mem>
+./pipeline.srcs/text_mem/ip/text_mem/text_mem.xci
+./pipeline.srcs/text_mem/ip/text_mem/text_mem.vho
+./pipeline.srcs/text_mem/ip/text_mem/text_mem.veo
+./pipeline.srcs/text_mem/ip/text_mem/text_mem.dcp
+./pipeline.srcs/text_mem/ip/text_mem/text_mem_stub.v
+./pipeline.srcs/text_mem/ip/text_mem/text_mem_stub.vhdl
+./pipeline.srcs/text_mem/ip/text_mem/text_mem_sim_netlist.v
+./pipeline.srcs/text_mem/ip/text_mem/text_mem_sim_netlist.vhdl
+./pipeline.srcs/text_mem/ip/text_mem/text_mem_ooc.xdc
+./pipeline.srcs/text_mem/ip/text_mem/blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3_vhsyn_rfs.vhd
+./pipeline.srcs/text_mem/ip/text_mem/blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3.vhd
+./pipeline.srcs/text_mem/ip/text_mem/synth/text_mem.vhd
+./pipeline.srcs/text_mem/ip/text_mem/text_mem.xml
+
+Section (3.4) - REMOTE IP DEFINITIONS
+-------------------------------------
+List of all the remote IP's present in the archived project:-
+
+<sources_1>
+None
+
+<mult_gen_0>
+None
+
+<div_gen_0>
+None
+
+<font_mem>
+None
+
+<loader_mem>
+None
+
+<mig_7series_0>
+None
+
+<ddr_clock_gen>
+None
+
+<text_mem>
+None
+
+Section (4) - JOURNAL/LOG FILES
+-------------------------------
+List of Journal/Log files that were added to the archived project:-
+
+Source File = /home/tyh/vivado.jou
+Archived Location = ./pipeline/vivado.jou
+
+Source File = /home/tyh/vivado.log
+Archived Location = ./pipeline/vivado.log
+
