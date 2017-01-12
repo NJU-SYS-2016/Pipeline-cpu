@@ -1,107 +1,12 @@
 #-----------------------------------------------------------
-# Vivado v2016.2 (64-bit)
-# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
-# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Wed Jan 11 15:42:39 2017
-# Process ID: 2645
-# Current directory: /home/tyh
-# Command line: vivado
-# Log file: /home/tyh/vivado.log
-# Journal file: /home/tyh/vivado.jou
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Thu Jan 12 11:56:20 2017
+# Process ID: 10444
+# Log file: D:/Documents/Desktop/Pipeline-cpu/project/vivado.log
+# Journal file: D:/Documents/Desktop/Pipeline-cpu/project\vivado.jou
 #-----------------------------------------------------------
 start_gui
-create_project project /home/tyh/project -part xc7a100tcsg324-1
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/myFile/Vivado/2016.2/data/ip'.
-create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 5794.559 ; gain = 34.664 ; free physical = 4446 ; free virtual = 8558
-add_files /home/tyh/Documents/Pipeline-cpu
-update_compile_order -fileset sources_1
-update_compile_order -fileset sim_1
-update_compile_order -fileset sources_1
-set_property file_type SystemVerilog [get_files  /home/tyh/Documents/Pipeline-cpu/src/vga.v]
-close_project
-****** Webtalk v2016.2 (64-bit)
-  **** SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
-  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
-
-source /home/tyh/project/project.hw/webtalk/labtool_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Wed Jan 11 16:01:59 2017...
-open_project /home/tyh/Documents/pipeline/pipeline.xpr
-CRITICAL WARNING: [Project 1-19] Could not find the file '/home/tyh/SYS_LAB/Pipeline-cpu/src/cache/cache_mem.v'.
-CRITICAL WARNING: [Project 1-19] Could not find the file '/home/tyh/SYS_LAB/Pipeline-cpu/src/cache/cache_mem_word.v'.
-CRITICAL WARNING: [Project 1-19] Could not find the file '/home/tyh/SYS_LAB/Pipeline-cpu/src/cache/cache_vmem.v'.
-CRITICAL WARNING: [Project 1-19] Could not find the file '/home/tyh/SYS_LAB/Pipeline-cpu/src/cache/victimway_sel.v'.
-CRITICAL WARNING: [Project 1-19] Could not find the file '/home/tyh/SYS_LAB/Pipeline-cpu/src/cache/cache_oneline.v'.
-CRITICAL WARNING: [Project 1-19] Could not find the file '/home/tyh/SYS_LAB/Pipeline-cpu/src/cache/cache_2ways.v'.
-Scanning sources...
-Finished scanning sources
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/myFile/Vivado/2016.2/data/ip'.
-WARNING: [IP_Flow 19-2162] IP 'clk_wiz_0' is locked:
-* IP definition 'Clocking Wizard (5.1)' for IP 'clk_wiz_0' has a newer minor version in the IP Catalog.
-Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
-open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:11 . Memory (MB): peak = 5969.570 ; gain = 93.176 ; free physical = 4464 ; free virtual = 8599
-update_compile_order -fileset sources_1
-archive_project /home/tyh/SYS_LAB/Pipeline-cpu/pipeline.xpr.zip -force
-INFO: [Coretcl 2-137] starting archive...
-INFO: [Coretcl 2-1499] Saving project copy to temporary location './.Xil/Vivado-2645-tyh' for archiving project
-CRITICAL WARNING: [Project 1-19] Could not find the file '/home/tyh/SYS_LAB/Pipeline-cpu/src/cache/cache_mem.v'.
-CRITICAL WARNING: [Project 1-19] Could not find the file '/home/tyh/SYS_LAB/Pipeline-cpu/src/cache/cache_mem_word.v'.
-CRITICAL WARNING: [Project 1-19] Could not find the file '/home/tyh/SYS_LAB/Pipeline-cpu/src/cache/cache_vmem.v'.
-CRITICAL WARNING: [Project 1-19] Could not find the file '/home/tyh/SYS_LAB/Pipeline-cpu/src/cache/victimway_sel.v'.
-CRITICAL WARNING: [Project 1-19] Could not find the file '/home/tyh/SYS_LAB/Pipeline-cpu/src/cache/cache_oneline.v'.
-CRITICAL WARNING: [Project 1-19] Could not find the file '/home/tyh/SYS_LAB/Pipeline-cpu/src/cache/cache_2ways.v'.
-Scanning sources...
-Finished scanning sources
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/myFile/Vivado/2016.2/data/ip'.
-WARNING: [IP_Flow 19-2162] IP 'clk_wiz_0' is locked:
-* IP definition 'Clocking Wizard (5.1)' for IP 'clk_wiz_0' has a newer minor version in the IP Catalog.
-Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
-INFO: [Coretcl 2-1211] Creating project copy for archival...
-WARNING: [IP_Flow 19-2162] IP 'clk_wiz_0' is locked:
-* IP definition 'Clocking Wizard (5.1)' for IP 'clk_wiz_0' has a newer minor version in the IP Catalog.
-Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
-INFO: [Coretcl 2-1213] Including run results for 'synth_1'
-INFO: [Coretcl 2-1213] Including run results for 'mult_gen_0_synth_1'
-INFO: [Coretcl 2-1213] Including run results for 'div_gen_0_synth_1'
-INFO: [Coretcl 2-1213] Including run results for 'font_mem_synth_1'
-INFO: [Coretcl 2-1213] Including run results for 'loader_mem_synth_1'
-INFO: [Coretcl 2-1213] Including run results for 'mig_7series_0_synth_1'
-INFO: [Coretcl 2-1213] Including run results for 'ddr_clock_gen_synth_1'
-INFO: [Coretcl 2-1213] Including run results for 'text_mem_synth_1'
-INFO: [Coretcl 2-1213] Including run results for 'impl_1'
-INFO: [Coretcl 2-133] re-setting run 'mult_gen_0_impl_1'...
-INFO: [Coretcl 2-133] re-setting run 'div_gen_0_impl_1'...
-INFO: [Coretcl 2-133] re-setting run 'font_mem_impl_1'...
-INFO: [Coretcl 2-133] re-setting run 'loader_mem_impl_1'...
-INFO: [Coretcl 2-133] re-setting run 'mig_7series_0_impl_1'...
-INFO: [Coretcl 2-133] re-setting run 'ddr_clock_gen_impl_1'...
-INFO: [Coretcl 2-133] re-setting run 'text_mem_impl_1'...
-INFO: [Coretcl 2-1212] Importing remotely added design sources and verilog include files (if any)...
-INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'ddr_clock_gen'
-INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'div_gen_0'
-INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'div_gen_0'
-INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'font_mem'
-INFO: [Device 21-403] Loading part xc7a100tcsg324-1
-INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'loader_mem'
-INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'mig_7series_0'
-INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'mult_gen_0'
-INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'mult_gen_0'
-INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'text_mem'
-INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'constrs_1'
-INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sim_1'
-INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
-WARNING: [filemgmt 20-342] File / dir doesn't exist, skipping: /home/tyh/SYS_LAB/Pipeline-cpu/src/cache/cache_mem.v
-WARNING: [filemgmt 20-342] File / dir doesn't exist, skipping: /home/tyh/SYS_LAB/Pipeline-cpu/src/cache/cache_mem_word.v
-WARNING: [filemgmt 20-342] File / dir doesn't exist, skipping: /home/tyh/SYS_LAB/Pipeline-cpu/src/cache/cache_vmem.v
-WARNING: [filemgmt 20-342] File / dir doesn't exist, skipping: /home/tyh/SYS_LAB/Pipeline-cpu/src/cache/victimway_sel.v
-WARNING: [filemgmt 20-342] File / dir doesn't exist, skipping: /home/tyh/SYS_LAB/Pipeline-cpu/src/cache/cache_oneline.v
-WARNING: [filemgmt 20-342] File / dir doesn't exist, skipping: /home/tyh/SYS_LAB/Pipeline-cpu/src/cache/cache_2ways.v
-WARNING: [IP_Flow 19-2162] IP 'clk_wiz_0' is locked:
-* IP definition 'Clocking Wizard (5.1)' for IP 'clk_wiz_0' has a newer minor version in the IP Catalog.
-Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 12 11:56:39 2017...
